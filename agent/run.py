@@ -16,8 +16,10 @@ from zoneinfo import ZoneInfo
 
 import requests
 
+sys.stdout.reconfigure(line_buffering=True)  # журнал запуску видно одразу, а не в кінці
 sys.path.insert(0, str(Path(__file__).parent))
 import rules as R  # noqa: E402
+import sources as S  # noqa: E402
 from sources import SOURCES  # noqa: E402
 
 ROOT = Path(os.environ.get("AGENT_ROOT") or Path(__file__).resolve().parent.parent)
@@ -116,15 +118,23 @@ def main():
 
     for key, name, home, fn in SOURCES:
         st = {"key": key, "name": name, "url": home, "ok": True, "error": "", "found": 0, "new": 0}
+        print(f"→ {name}: починаю", flush=True)
+        S.PARTIAL.clear()
+        S.set_deadline(R.RULES.get("seconds_per_site", 480))
         try:
             raw = fn(cutoff, today, is_seen)
+            if S.PARTIAL:
+                st["partial"] = True
+                st["error"] = "зібрано не все: " + S.PARTIAL[0]
             st["found"] = len(raw)
             for ad in raw:
                 if is_seen(ad["id"]):
                     continue
                 if ad.get("detail_failed"):
-                    tries = seen.setdefault("retry", {}).get(ad["id"], 0) + 1
-                    seen["retry"][ad["id"]] = tries
+                    tries = seen.setdefault("retry", {}).get(ad["id"], 0)
+                    if ad["detail_failed"] != "time":  # брак часу — не збій, просто дочитаємо завтра
+                        tries += 1
+                        seen["retry"][ad["id"]] = tries
                     if tries < 3:  # опис не відкрився — спробуємо завтра (максимум 2 рази)
                         st["retry_later"] = st.get("retry_later", 0) + 1
                         continue
@@ -151,7 +161,10 @@ def main():
             st["error"] = str(e)[:200]
             traceback.print_exc()
         statuses.append(st)
-        print(f"{name}: {'OK' if st['ok'] else 'ПОМИЛКА ' + st['error']} — знайдено {st['found']}, нових {st['new']}")
+        S.set_deadline(None)
+        print(f"{name}: {'OK' if st['ok'] else 'ПОМИЛКА ' + st['error']} — знайдено {st['found']}, нових {st['new']}"
+              + (f", відкладено на завтра {st['retry_later']}" if st.get("retry_later") else "")
+              + (" (частково)" if st.get("partial") else ""), flush=True)
 
     keep_from = (today - timedelta(days=R.RULES.get("keep_days", 45))).isoformat()
     ads = new_cards + [a for a in old_ads if a.get("first_seen", "") >= keep_from and a["id"] not in {c["id"] for c in new_cards}]
@@ -176,6 +189,9 @@ def main():
            f"Відсіяно CPT/доставка: {counts['delivery']}, дублів: {counts['duplicate']}")
     if failed:
         msg += "\n⚠️ Не відкрився: " + ", ".join(failed)
+    partial = [s["name"] for s in statuses if s["ok"] and s.get("partial")]
+    if partial:
+        msg += "\n⚠️ Зібрано не все (сайт повільний, решту дочитаю завтра): " + ", ".join(partial)
     if PAGE_URL:
         msg += f"\n{PAGE_URL}"
     if no_send:
