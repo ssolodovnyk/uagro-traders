@@ -92,5 +92,6 @@
   "days_back": 7,
   "keep_days": 45,
   "max_pages_per_list": 8,
-  "pause_seconds": 0.8
+  "pause_seconds": 0.8,
+  "seconds_per_site": 480
 }
