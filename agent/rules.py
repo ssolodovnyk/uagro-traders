@@ -127,6 +127,23 @@ EMAIL = re.compile(r"[\w.\-]+@[\w\-]+\.[\w.\-]+")
 URL = re.compile(r"https?://\S+|www\.\S+|t\.me/\S+|@\w{4,}")
 
 
+def extract_phones(*texts):
+    """Українські номери з тексту у вигляді +380XXXXXXXXX (без дублів, максимум 3)."""
+    out = []
+    for text in texts:
+        for m in PHONE.finditer(text or ""):
+            d = re.sub(r"\D", "", m.group(0))
+            if len(d) == 10 and d.startswith("0"):
+                d = "38" + d
+            elif len(d) == 9:
+                d = "380" + d
+            if len(d) == 12 and d.startswith("380"):
+                p = "+" + d
+                if p not in out:
+                    out.append(p)
+    return out[:3]
+
+
 def strip_contacts(text):
     t = EMAIL.sub("", text or "")
     t = URL.sub("", t)
