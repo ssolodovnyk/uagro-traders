@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Трейдери з місця</title>
+<style>
+:root{
+  --bg:#f6f5f1; --card:#ffffff; --ink:#1d2320; --muted:#5f6a64; --line:#e3e1d9;
+  --accent:#2f6b3a; --accent-ink:#ffffff; --accent-soft:#e4efe4;
+  --new:#b5541b; --new-soft:#fbe9dc; --warn:#8a5a00; --warn-soft:#fdf1d4;
+  --bad:#a32020; --bad-soft:#fbe3e3; --ok:#2f6b3a;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141816; --card:#1d2320; --ink:#e9ece9; --muted:#9aa59f; --line:#2e3632;
+    --accent:#7cc38a; --accent-ink:#0f1a12; --accent-soft:#22352a;
+    --new:#f0a06b; --new-soft:#3a271b; --warn:#f0c45a; --warn-soft:#352c16;
+    --bad:#f08a8a; --bad-soft:#3a1f1f; --ok:#7cc38a;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:12px 16px 60px}
+h1{font-size:20px;margin:6px 0 2px}
+.sub{color:var(--muted);font-size:13px}
+.summary{margin:10px 0;padding:10px 12px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.summary b{font-size:17px}
+.src{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.src span{font-size:12px;padding:3px 8px;border-radius:99px;background:var(--accent-soft);color:var(--ok)}
+.src span.fail{background:var(--bad-soft);color:var(--bad)}
+.tabs{display:flex;gap:6px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:2}
+.tab{flex:1;padding:10px 6px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:14px;font-weight:600;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+details.filters{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin-bottom:10px}
+details.filters summary{cursor:pointer;font-weight:600}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.grid label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-size:15px;width:100%}
+.checks{display:flex;flex-direction:column;gap:6px;margin-top:10px;font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:10px 0}
+.card.dim{opacity:.55}
+.badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
+.b{font-size:11px;font-weight:700;letter-spacing:.02em;padding:2px 7px;border-radius:6px;text-transform:uppercase}
+.b.new{background:var(--new-soft);color:var(--new)}
+.b.dnd{background:var(--bad-soft);color:var(--bad)}
+.b.cpt{background:var(--warn-soft);color:var(--warn)}
+.b.st{background:var(--accent-soft);color:var(--accent)}
+.t{font-weight:650;font-size:16px;margin:0 0 6px}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:14px}
+.meta dt{color:var(--muted)}
+.meta dd{margin:0}
+.sign{font-size:12px;color:var(--muted);margin-top:6px}
+.row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;align-items:center}
+.row a.orig{margin-right:auto;color:var(--accent);font-weight:600;text-decoration:none;padding:8px 0}
+.sbtn{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:7px 9px;font-size:13px;cursor:pointer}
+.sbtn.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.empty{color:var(--muted);text-align:center;padding:30px 0}
+.tab.more{width:100%;margin-top:6px;font-weight:600}
+.rej p{margin:8px 0;font-size:14px}
+.rej a{color:var(--accent)}
+.rej small{color:var(--muted)}
+.foot{margin-top:24px;font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.foot button,.foot label.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:7px 10px;font-size:13px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Зернотрейдери «з місця»</h1>
+  <div class="sub" id="updated">Завантаження…</div>
+
+  <div class="summary" id="summary"></div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-tab="farm" aria-selected="true">З місця <span id="c-farm"></span></button>
+    <button class="tab" role="tab" data-tab="unclear" aria-selected="false">Неясно — перевірити <span id="c-unclear"></span></button>
+  </div>
+
+  <details class="filters">
+    <summary>Фільтри</summary>
+    <div class="grid">
+      <label>Ціна від, грн/т<input type="number" id="pmin" inputmode="numeric"></label>
+      <label>Ціна до, грн/т<input type="number" id="pmax" inputmode="numeric"></label>
+      <label>Обсяг від, т<input type="number" id="vmin" inputmode="numeric"></label>
+      <label>Обсяг до, т<input type="number" id="vmax" inputmode="numeric"></label>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="onlynew"> Лише нові сьогодні</label>
+      <label><input type="checkbox" id="hidebad" checked> Сховати «не цікаво»</label>
+      <label><input type="checkbox" id="nodeal" checked> Показувати оголошення без ціни/обсягу</label>
+    </div>
+  </details>
+
+  <div id="list"></div>
+
+  <details class="filters" id="rej-box" hidden>
+    <summary>Відсіяно як CPT / доставка сьогодні <span id="c-rej"></span></summary>
+    <div id="rej" class="rej"></div>
+  </details>
+
+  <div class="foot">
+    <span>Статуси зберігаються лише на цьому пристрої.</span>
+    <button id="export">Зберегти копію статусів</button>
+    <label class="btn">Відновити з файлу<input type="file" id="import" accept=".json" hidden></label>
+  </div>
+</div>
+
+<script>
+const STATUSES = [["called","Подзвонив"],["no","Не цікаво"],["work","Взяв у роботу"]];
+const SRC = {"agrotender":"Agrotender","agro-ukraine":"Agro-Ukraine","clunya":"Clunya","agrorynok":"Агроринок"};
+const KEY = "uagro-statuses-v1";
+let DATA = {ads:[],sources:[],run:{}}, TAB = "farm", ST = {}, LIMIT = 50;
+
+function loadSt(){ try{ ST = JSON.parse(localStorage.getItem(KEY)||"{}") }catch(e){ ST = {} } }
+function saveSt(){ try{ localStorage.setItem(KEY, JSON.stringify(ST)) }catch(e){} }
+const esc = s => String(s??"").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmtDate = iso => { if(!iso) return ""; const [y,m,d]=iso.slice(0,10).split("-"); return `${d}.${m}.${y}` };
+const num = id => { const v = document.getElementById(id).value; return v === "" ? null : Number(v) };
+
+function render(){
+  const run = DATA.run || {};
+  const today = run.run_date;
+  const pmin=num("pmin"), pmax=num("pmax"), vmin=num("vmin"), vmax=num("vmax");
+  const onlyNew=document.getElementById("onlynew").checked, hideBad=document.getElementById("hidebad").checked, keepUnknown=document.getElementById("nodeal").checked;
+  const counts = {farm:0, unclear:0};
+  const shown = DATA.ads.filter(a => {
+    const st = ST[a.id];
+    if (hideBad && st === "no") return false;
+    if (onlyNew && a.first_seen !== today) return false;
+    const uah = a.currency === "грн" ? a.price : null;
+    if (pmin!=null || pmax!=null){ if (uah==null){ if(!keepUnknown) return false } else { if(pmin!=null && uah<pmin) return false; if(pmax!=null && uah>pmax) return false } }
+    if (vmin!=null || vmax!=null){ if (a.volume_t==null){ if(!keepUnknown) return false } else { if(vmin!=null && a.volume_t<vmin) return false; if(vmax!=null && a.volume_t>vmax) return false } }
+    counts[a.terms] = (counts[a.terms]||0) + 1;
+    return a.terms === TAB;
+  });
+  document.getElementById("c-farm").textContent = `(${counts.farm||0})`;
+  document.getElementById("c-unclear").textContent = `(${counts.unclear||0})`;
+  const list = document.getElementById("list");
+  if (!shown.length){ list.innerHTML = `<div class="empty">Тут поки порожньо.</div>`; return; }
+  const rest = shown.length - LIMIT;
+  list.innerHTML = shown.slice(0, LIMIT).map(a => {
+    const st = ST[a.id];
+    const price = a.price ? `${a.price.toLocaleString("uk-UA")} ${esc(a.currency||"")}/т` : "договірна";
+    const place = [a.region, a.district].filter(Boolean).join(", ") || "не вказано";
+    const badges = [
+      a.first_seen === today ? `<span class="b new">Нове сьогодні</span>` : "",
+      a.dnd ? `<span class="b dnd">Не турбувати</span>` : "",
+      a.also_delivery ? `<span class="b cpt">Також CPT</span>` : "",
+      st ? `<span class="b st">${esc(STATUSES.find(s=>s[0]===st)?.[1]||"")}</span>` : ""
+    ].join("");
+    return `<article class="card${st==="no"?" dim":""}">
+      ${badges ? `<div class="badges">${badges}</div>` : ""}
+      <p class="t">${esc(a.title)}</p>
+      <dl class="meta">
+        <dt>Культура</dt><dd>${esc((a.crops||[]).join(", "))}</dd>
+        <dt>Ціна</dt><dd>${price}</dd>
+        <dt>Обсяг</dt><dd>${a.volume_t ? a.volume_t.toLocaleString("uk-UA")+" т" : "не вказано"}</dd>
+        <dt>Місце</dt><dd>${esc(place)}</dd>
+        ${a.company ? `<dt>Компанія</dt><dd>${esc(a.company)}</dd>` : ""}
+        <dt>Дата</dt><dd>${fmtDate(a.posted)} · ${esc(SRC[a.source]||a.source)}</dd>
+      </dl>
+      ${a.signs && a.signs.length ? `<div class="sign">Ознака «з місця»: ${esc(a.signs.join(", "))}</div>` : `<div class="sign">Умови в оголошенні не вказані</div>`}
+      <div class="row">
+        <a class="orig" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">Відкрити оригінал →</a>
+        ${STATUSES.map(([k,l]) => `<button class="sbtn${st===k?" on":""}" data-id="${esc(a.id)}" data-st="${k}">${l}</button>`).join("")}
+      </div>
+    </article>`;
+  }).join("") + (rest > 0 ? `<button class="tab more" id="more">Показати ще (${rest})</button>` : "");
+}
+
+function renderHead(){
+  const r = DATA.run || {};
+  document.getElementById("updated").textContent = r.generated_at ? `Оновлено: ${fmtDate(r.generated_at)} о ${r.generated_at.slice(11,16)}` : "Ще не було запусків";
+  const src = (DATA.sources||[]).map(s => s.ok
+    ? `<span title="знайдено ${s.found}">✓ ${esc(s.name)}: ${s.new} нових</span>`
+    : `<span class="fail" title="${esc(s.error)}">✗ ${esc(s.name)}: не відкрився</span>`).join("");
+  document.getElementById("summary").innerHTML =
+    `<b>Сьогодні нових: ${r.new_total ?? 0}</b> — з місця ${r.new_farm ?? 0}, неясних ${r.new_unclear ?? 0}<br>
+     <span class="sub">Відсіяно CPT/доставка: ${r.rejected_delivery ?? 0} · дублів: ${r.duplicates ?? 0}</span>
+     <div class="src">${src}</div>`;
+  const rej = DATA.rejected_today || [];
+  if (rej.length){
+    document.getElementById("rej-box").hidden = false;
+    document.getElementById("c-rej").textContent = `(${rej.length})`;
+    document.getElementById("rej").innerHTML = rej.map(a =>
+      `<p><a href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">${esc(a.title)}</a><br><small>${esc(SRC[a.source]||a.source)} · ознака: ${esc((a.signs||[]).join(", "))}</small></p>`).join("");
+  }
+}
+
+document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => {
+  TAB = b.dataset.tab; LIMIT = 50; document.querySelectorAll(".tabs .tab").forEach(x => x.setAttribute("aria-selected", x===b)); render();
+}));
+document.querySelectorAll(".filters input").forEach(i => i.addEventListener("input", () => { LIMIT = 50; render(); }));
+document.getElementById("list").addEventListener("click", e => {
+  if (e.target.id === "more"){ LIMIT += 50; render(); return; }
+  const b = e.target.closest(".sbtn"); if(!b) return;
+  const {id, st} = b.dataset; ST[id] === st ? delete ST[id] : ST[id] = st; saveSt(); render();
+});
+document.getElementById("export").addEventListener("click", () => {
+  const blob = new Blob([JSON.stringify(ST,null,1)], {type:"application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = `statusy-${new Date().toISOString().slice(0,10)}.json`; a.click();
+});
+document.getElementById("import").addEventListener("change", async e => {
+  const f = e.target.files[0]; if(!f) return;
+  try{ Object.assign(ST, JSON.parse(await f.text())); saveSt(); render(); alert("Статуси відновлено"); }catch(err){ alert("Файл не підходить"); }
+});
+
+loadSt();
+fetch("data.json?t=" + Date.now()).then(r => r.json()).then(d => { DATA = d; renderHead(); render(); })
+  .catch(() => { document.getElementById("updated").textContent = "Не вдалося завантажити дані"; });
+</script>
+</body>
+</html>
