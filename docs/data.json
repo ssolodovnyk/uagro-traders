@@ -1,13 +1,14 @@
 {
  "run": {
-  "generated_at": "2026-11-21T15:17+02:00",
+  "generated_at": "2026-11-21T16:07+02:00",
   "run_date": "2026-11-21",
-  "new_total": 474,
-  "new_farm": 294,
-  "new_unclear": 180,
-  "rejected_delivery": 34,
-  "duplicates": 29,
-  "failed": []
+  "new_total": 83,
+  "new_farm": 68,
+  "new_unclear": 15,
+  "rejected_delivery": 1,
+  "duplicates": 6,
+  "failed": [],
+  "with_phone": 200
  },
  "sources": [
   {
@@ -17,7 +18,7 @@
    "ok": true,
    "error": "",
    "found": 149,
-   "new": 127
+   "new": 0
   },
   {
    "key": "agro-ukraine",
@@ -26,8 +27,7 @@
    "ok": true,
    "error": "",
    "found": 464,
-   "new": 326,
-   "retry_later": 96
+   "new": 83
   },
   {
    "key": "clunya",
@@ -36,7 +36,7 @@
    "ok": true,
    "error": "",
    "found": 20,
-   "new": 2
+   "new": 0
   },
   {
    "key": "agrorynok",
@@ -45,10 +45,62 @@
    "ok": true,
    "error": "",
    "found": 24,
-   "new": 19
+   "new": 0
   }
  ],
  "ads": [
+  {
+   "id": "agro-ukraine:1396650",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1396650/kuplyu-sonyashnik-ta-soyu-gmo-vid-300t-z-mistsya-fasovani-v-big-begi/",
+   "title": "Куплю соняшник та сою гмо від 300т. з місця, фасовані в біг беги",
+   "crops": [
+    "Соя",
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 300,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-21",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1308647",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1308647/kupuyemo-ripak-vsya-ukrayina/",
+   "title": "Купуємо соняшник. Вся Україна",
+   "crops": [
+    "Жито",
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 100,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "з господарств"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-21",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
   {
    "id": "agrotender:362735",
    "source": "agrotender",
@@ -73,7 +125,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:322901",
@@ -98,7 +151,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:318160",
@@ -123,7 +177,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:362064",
@@ -150,7 +205,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:361950",
@@ -171,7 +227,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:349288",
@@ -194,7 +251,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:362053",
@@ -219,7 +277,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:361951",
@@ -242,7 +301,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:318159",
@@ -264,7 +324,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1395792",
@@ -287,7 +348,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1053650",
@@ -308,7 +370,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:985881",
@@ -334,7 +397,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1396651",
@@ -359,7 +423,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1322457",
@@ -382,7 +447,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1141810",
@@ -405,7 +471,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1210526",
@@ -428,7 +495,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1370869",
@@ -449,7 +517,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1373176",
@@ -471,7 +540,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1372243",
@@ -492,7 +562,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1395510",
@@ -513,7 +584,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1391932",
@@ -536,7 +608,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1350356",
@@ -557,7 +630,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1357145",
@@ -578,7 +652,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1088463",
@@ -599,7 +674,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1352542",
@@ -622,7 +698,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1371403",
@@ -643,7 +720,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1396322",
@@ -664,7 +742,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1345679",
@@ -685,7 +764,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1396649",
@@ -709,7 +789,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1343031",
@@ -730,7 +811,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1390207",
@@ -753,7 +835,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1371258",
@@ -774,7 +857,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agrorynok:430462",
@@ -795,7 +879,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432156",
@@ -819,7 +904,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432153",
@@ -844,7 +930,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432154",
@@ -867,7 +954,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432118",
@@ -888,7 +976,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432097",
@@ -912,7 +1001,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:431037",
@@ -935,7 +1025,184 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-21",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1366779",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366779/kuplyu-girchitsyu-bilu-samoviviz-iz-gospodarstva/",
+   "title": "Куплю гірчицю білу. Самовивіз із господарства",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Волинська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "власний транспорт"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1107005",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1107005/kuplyu-len-korichnevyj-zolotoj-gorchitsa-zheltaya-belaya-chechevitsy-zelena-krasnaya-koriandr/",
+   "title": "Переробка - Кропивницький -купує льон кор./зол., коріандр, гірчицю, сочевицю, сонях на ядро",
+   "crops": [
+    "Сочевиця",
+    "Соняшник",
+    "Ріпак",
+    "Льон",
+    "Гірчиця",
+    "Коріандр",
+    "Мак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": true,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1318871",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1318871/kupuyemo-sonyashnik-poltava-dnipro-kirovograd-mikolayiv/",
+   "title": "Купуємо соняшник. Кіровоград. Полтава. Дніпро. Миколаїв. Черкаси",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1310409",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1310409/gorchitsa-belaya/",
+   "title": "Горчица белая",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 100,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывозом",
+    "с хозяйства"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1253414",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1253414/prelyj-kislotnyj-podsolnechnik/",
+   "title": "Прелый, кислотный подсолнечник",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоза"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1385106",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1385106/zakupovuyemo-sonyashnik/",
+   "title": "Закуповуємо Соняшник",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "з господарства"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1395038",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1395038/kupuyemo-ripak/",
+   "title": "Купуємо Ріпак",
+   "crops": [
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "з господарства"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agrotender:306688",
@@ -959,7 +1226,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:339618",
@@ -980,7 +1248,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:341827",
@@ -1003,7 +1272,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:341831",
@@ -1026,7 +1296,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:296172",
@@ -1049,7 +1320,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:296169",
@@ -1073,7 +1345,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:296168",
@@ -1097,7 +1370,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:296167",
@@ -1121,7 +1395,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:296173",
@@ -1144,7 +1419,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:296170",
@@ -1167,7 +1443,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:296171",
@@ -1190,7 +1467,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:296174",
@@ -1213,7 +1491,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:280823",
@@ -1234,7 +1513,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:296176",
@@ -1257,7 +1537,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:296175",
@@ -1280,7 +1561,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:363595",
@@ -1303,7 +1585,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1344284",
@@ -1325,7 +1608,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1343717",
@@ -1349,7 +1633,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1302341",
@@ -1370,7 +1655,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1302349",
@@ -1391,7 +1677,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1396539",
@@ -1412,7 +1699,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1217654",
@@ -1436,7 +1724,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1355938",
@@ -1459,7 +1748,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:996755",
@@ -1480,7 +1770,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1343884",
@@ -1503,7 +1794,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1092037",
@@ -1526,7 +1818,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1141970",
@@ -1549,7 +1842,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1158090",
@@ -1572,7 +1866,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1038428",
@@ -1595,7 +1890,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1123152",
@@ -1618,7 +1914,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1042472",
@@ -1641,7 +1938,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1332287",
@@ -1664,7 +1962,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1139539",
@@ -1687,7 +1986,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:94112",
@@ -1712,7 +2012,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1312813",
@@ -1738,7 +2039,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:307388",
@@ -1761,7 +2063,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1193898",
@@ -1784,7 +2087,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:434565",
@@ -1809,7 +2113,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1355659",
@@ -1832,7 +2137,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:866379",
@@ -1853,7 +2159,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1292655",
@@ -1876,7 +2183,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1345892",
@@ -1899,7 +2207,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1383318",
@@ -1922,7 +2231,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1372240",
@@ -1947,7 +2257,8 @@
    "also_delivery": false,
    "dnd": true,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1330371",
@@ -1968,7 +2279,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1273545",
@@ -1989,7 +2301,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1365664",
@@ -2010,7 +2323,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1263859",
@@ -2033,7 +2347,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:325137",
@@ -2057,7 +2372,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:319972",
@@ -2080,7 +2396,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:355793",
@@ -2103,7 +2420,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:362127",
@@ -2127,7 +2445,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:355789",
@@ -2150,7 +2469,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1313611",
@@ -2173,7 +2493,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:315170",
@@ -2196,7 +2517,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:319978",
@@ -2219,7 +2541,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:319983",
@@ -2242,7 +2565,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1360811",
@@ -2263,7 +2587,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1394841",
@@ -2284,7 +2609,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1217347",
@@ -2308,7 +2634,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1112745",
@@ -2331,7 +2658,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1227893",
@@ -2354,7 +2682,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1345236",
@@ -2378,7 +2707,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1272965",
@@ -2401,7 +2731,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:641728",
@@ -2424,7 +2755,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1373177",
@@ -2447,7 +2779,8 @@
    "also_delivery": false,
    "dnd": true,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1385105",
@@ -2471,7 +2804,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1191330",
@@ -2494,7 +2828,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1307858",
@@ -2515,7 +2850,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1289661",
@@ -2538,7 +2874,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:300310",
@@ -2562,7 +2899,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:315153",
@@ -2585,7 +2923,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1366783",
@@ -2609,7 +2948,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1394374",
@@ -2630,7 +2970,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1259396",
@@ -2651,7 +2992,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1127130",
@@ -2674,7 +3016,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1153827",
@@ -2697,7 +3040,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1332288",
@@ -2721,7 +3065,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1372241",
@@ -2746,7 +3091,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1313608",
@@ -2769,7 +3115,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:431047",
@@ -2792,7 +3139,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1313610",
@@ -2815,7 +3163,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:785756",
@@ -2836,7 +3185,742 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-20",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1392002",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1392002/prijom-kvasoli-zakupka-kvasoli-kuplyu-kvasolyu/",
+   "title": "Прийом квасолі. Закупка квасолі. Куплю квасолю",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1371849",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1371849/kvasolya-na-posiv-garantovanij-zbut-vrozhayu/",
+   "title": "Переробне підприємство закуповує квасолю оптом",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Волинська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1395347",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1395347/shukayemo-gospodarstva-dlya-zakupivli-vrozhayu-kvasoli/",
+   "title": "Шукаємо господарства для закупівлі врожаю квасолі",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "транспортом покупця",
+    "вивезення"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1393309",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1393309/prijmayemo-kvasolyu-u-fermeriv-i-agropidpriyemstv-na-pererobku/",
+   "title": "Приймаємо квасолю у фермерів і агропідприємств на переробку",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "транспортом покупця",
+    "забираємо"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1389021",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1389021/kupuyemo-kvasolyu-na-postijnij-osnovi/",
+   "title": "Купуємо квасолю на постійній основі",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Тернопільська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1371996",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1371996/zakupovuyemo-kvasolyu-u-virobnikiv/",
+   "title": "Закуповуємо квасолю у виробників",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "власним транспортом"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1394865",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1394865/zakupovuyemo-kvasolyu-dlya-pererobki-ta-konservuvannya/",
+   "title": "Закуповуємо квасолю для переробки та консервування",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Рівненська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "транспортом покупця"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1368060",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1368060/kupuyemo-kvasolyu-u-fermeriv-ta-s-g-pidpriyemstv/",
+   "title": "Купуємо квасолю у фермерів та с.г підприємств",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "нашим транспортом",
+    "вивезення"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1393501",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1393501/shukayemo-partneriv-dlya-postachannya-kvasoli-na-postijnij-osnovi/",
+   "title": "Шукаємо партнерів для постачання квасолі на постійній основі",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Львівська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "транспортом покупця"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1365349",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1365349/prijmayemo-kvasolyu-na-konservuvannya-zaberemo-svoyim-transportom/",
+   "title": "Приймаємо квасолю на консервування. Заберемо своїм транспортом",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Черкаська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "своїм транспортом",
+    "власним транспортом"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1391913",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1391913/zakupovuyemo-polovinki-soyi-samoviviz-bud-yaka-forma-oplati/",
+   "title": "Закуповуємо половинки сої (самовивіз, будь-яка форма оплати)",
+   "crops": [
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1388169",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1388169/kupuyemo-kvasolyu-riznikh-sortiv/",
+   "title": "Купуємо квасолю різних сортів",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Івано-Франківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1393041",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1393041/zakupivlya-kvasoli-vid-virobnikiv-vid-10-tonn/",
+   "title": "Закупівля квасолі від виробників - від 10 тонн",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Житомирська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "транспортом покупця",
+    "вивезення"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1368363",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1368363/kupuyemo-kvasolyu-vid-10-tonn/",
+   "title": "Купуємо квасолю від 10 тонн",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Чернігівська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "нашим транспортом",
+    "вивезення"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1372539",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1372539/zakupivlya-kvasoli-dlya-konservnogo-virobnitstva/",
+   "title": "Закупівля квасолі для консервного виробництва",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Одеська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1373033",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1373033/zakupovuyemo-kvasolyu-velikimi-partiyami/",
+   "title": "Закуповуємо квасолю великими партіями",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "вивезення"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1386990",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1386990/zakupovuyemo-kvasolyu-u-velikikh-obsyagakh-stabilni-kontrakti-ta-samoviviz/",
+   "title": "Закуповуємо квасолю у великих обсягах: стабільні контракти та самовивіз",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Рівненська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1368799",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1368799/kupuyemo-kvasolyu-riznikh-sortiv-vid-10-tonn/",
+   "title": "Купуємо квасолю різних сортів. Від 10 тонн",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Рівненська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "нашим транспортом",
+    "вивезення"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1388664",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1388664/kupuyemo-kvasolyu-mayemo-potrebu-u-velikikh-obsyagakh/",
+   "title": "Купуємо квасолю. Маємо потребу у великих обсягах",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1395565",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1395565/zakupivlya-kvasoli-riznikh-sortiv-u-velikikh-obsyagakh/",
+   "title": "Закупівля квасолі різних сортів у великих обсягах",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Житомирська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "транспортом покупця"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1393751",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1393751/kvasolya-optom-prijmannya-na-pererobku-vid-10-tonn/",
+   "title": "Квасоля оптом: приймання на переробку від 10 тонн",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "транспортом покупця"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1390589",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1390589/postijno-kupuyemo-kvasolyu-samoviviz/",
+   "title": "Постійно купуємо квасолю. Самовивіз",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Закарпатська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "власним транспортом"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1396362",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1396362/prijmayemo-optovi-partiyi-kvasoli-dlya-promislovoyi-pererobki/",
+   "title": "Приймаємо оптові партії квасолі для промислової переробки",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Львівська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "транспортом покупця"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1193888",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1193888/kuplyu-koriandr/",
+   "title": "Куплю кориандр",
+   "crops": [
+    "Коріандр"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 22,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1389382",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1389382/kupuyemo-koriandr-vsya-ukrayina/",
+   "title": "Купуємо коріандр з місця. Вся Україна",
+   "crops": [
+    "Коріандр"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 25,
+   "region": "Одеська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1327550",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1327550/kuplyu-sonyashnik-sumi-sumska-oblast/",
+   "title": "Куплю соняшник.Кіровоград. Черкаси. Київ. Житомир. Вінниця. Хмельницький",
+   "crops": [
+    "Жито",
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 100,
+   "region": "Черкаська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1226509",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1226509/kuplyu-ripak-sonyashnik-pshenitsyu/",
+   "title": "Куплю ріпак, соняшник, пшеницю",
+   "crops": [
+    "Пшениця",
+    "Соняшник",
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1218618",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1218618/kuplyu-sonyashnik-visokooleyinovij/",
+   "title": "Куплю соняшник високоолеїновий",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": 14800,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1225910",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1225910/kuplyu-sonyashnik-pshenitsyu-ripak/",
+   "title": "Куплю соняшник, пшеницю, ріпак",
+   "crops": [
+    "Пшениця",
+    "Соняшник",
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1224722",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1224722/zakupovuyemo-sonyashnik-pshenitsyu-ripak/",
+   "title": "Закуповуємо соняшник, пшеницю, ріпак",
+   "crops": [
+    "Пшениця",
+    "Соняшник",
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:336037",
@@ -2859,7 +3943,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:350960",
@@ -2880,7 +3965,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:356012",
@@ -2901,7 +3987,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360048",
@@ -2925,7 +4012,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:361179",
@@ -2948,7 +4036,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360629",
@@ -2972,7 +4061,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360766",
@@ -2993,7 +4083,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:356830",
@@ -3014,7 +4105,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:362244",
@@ -3035,7 +4127,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:363379",
@@ -3056,7 +4149,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:362714",
@@ -3077,7 +4171,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:350957",
@@ -3098,7 +4193,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:361314",
@@ -3119,7 +4215,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:670473",
@@ -3140,7 +4237,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1217203",
@@ -3172,7 +4270,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1180333",
@@ -3195,7 +4294,8 @@
    "also_delivery": false,
    "dnd": true,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1137572",
@@ -3218,7 +4318,8 @@
    "also_delivery": false,
    "dnd": true,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:996761",
@@ -3241,7 +4342,8 @@
    "also_delivery": false,
    "dnd": true,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:996758",
@@ -3264,7 +4366,8 @@
    "also_delivery": false,
    "dnd": true,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1138588",
@@ -3287,7 +4390,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:963781",
@@ -3311,7 +4415,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:763053",
@@ -3334,7 +4439,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:963776",
@@ -3358,7 +4464,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:960291",
@@ -3385,7 +4492,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:751181",
@@ -3412,7 +4520,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1191817",
@@ -3433,7 +4542,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1349060",
@@ -3455,7 +4565,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1214465",
@@ -3479,7 +4590,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1312121",
@@ -3502,7 +4614,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1395576",
@@ -3531,7 +4644,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1371999",
@@ -3561,7 +4675,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1372541",
@@ -3590,7 +4705,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1386814",
@@ -3619,7 +4735,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1365357",
@@ -3648,7 +4765,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1225618",
@@ -3671,7 +4789,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1388455",
@@ -3700,7 +4819,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1224377",
@@ -3723,7 +4843,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1367103",
@@ -3753,7 +4874,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1226933",
@@ -3776,7 +4898,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1308776",
@@ -3798,7 +4921,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1386116",
@@ -3827,7 +4951,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1384228",
@@ -3856,7 +4981,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1389806",
@@ -3885,7 +5011,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1384979",
@@ -3914,7 +5041,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1387735",
@@ -3943,7 +5071,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1373479",
@@ -3972,7 +5101,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1379598",
@@ -4001,7 +5131,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1395675",
@@ -4022,7 +5153,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1127849",
@@ -4043,7 +5175,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1353759",
@@ -4064,7 +5197,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1350242",
@@ -4085,7 +5219,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1353265",
@@ -4109,7 +5244,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1371402",
@@ -4131,7 +5267,8 @@
    "also_delivery": false,
    "dnd": true,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1366793",
@@ -4154,7 +5291,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1396355",
@@ -4178,7 +5316,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:996744",
@@ -4200,7 +5339,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:996753",
@@ -4223,7 +5363,8 @@
    "also_delivery": false,
    "dnd": true,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1389565",
@@ -4244,7 +5385,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1173600",
@@ -4265,7 +5407,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1216788",
@@ -4286,7 +5429,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1211320",
@@ -4307,7 +5451,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1211609",
@@ -4330,7 +5475,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1365472",
@@ -4355,7 +5501,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1394103",
@@ -4380,7 +5527,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1370292",
@@ -4403,7 +5551,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1395062",
@@ -4426,7 +5575,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1392372",
@@ -4449,7 +5599,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1391828",
@@ -4472,7 +5623,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1367848",
@@ -4496,7 +5648,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1369166",
@@ -4519,7 +5672,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1394377",
@@ -4543,7 +5697,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1372260",
@@ -4566,7 +5721,8 @@
    "also_delivery": true,
    "dnd": true,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1393136",
@@ -4591,7 +5747,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1392147",
@@ -4614,7 +5771,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1366049",
@@ -4639,7 +5797,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1394582",
@@ -4662,7 +5821,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1388453",
@@ -4685,7 +5845,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1371294",
@@ -4708,7 +5869,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1391146",
@@ -4731,7 +5893,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1369630",
@@ -4754,7 +5917,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1366710",
@@ -4778,7 +5942,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1364967",
@@ -4803,7 +5968,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1372802",
@@ -4827,7 +5993,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1389191",
@@ -4851,7 +6018,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1390817",
@@ -4875,7 +6043,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1366883",
@@ -4899,7 +6068,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1390295",
@@ -4923,7 +6093,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1372429",
@@ -4947,7 +6118,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1390152",
@@ -4971,7 +6143,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1373188",
@@ -4995,7 +6168,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1361412",
@@ -5016,7 +6190,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1072162",
@@ -5037,7 +6212,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1219202",
@@ -5061,7 +6237,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1218376",
@@ -5084,7 +6261,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1219842",
@@ -5107,7 +6285,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1220217",
@@ -5130,7 +6309,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1220516",
@@ -5153,7 +6333,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1225219",
@@ -5176,7 +6357,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1221047",
@@ -5199,7 +6381,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1395573",
@@ -5220,7 +6403,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1386354",
@@ -5244,7 +6428,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1367615",
@@ -5265,7 +6450,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1371401",
@@ -5288,7 +6474,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1367633",
@@ -5311,7 +6498,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agrorynok:432040",
@@ -5332,7 +6520,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432017",
@@ -5357,7 +6546,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432015",
@@ -5378,7 +6568,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:431990",
@@ -5406,7 +6597,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agrorynok:431038",
@@ -5430,7 +6622,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:431840",
@@ -5459,7 +6652,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432139",
@@ -5482,7 +6676,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432146",
@@ -5511,7 +6706,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432145",
@@ -5534,7 +6730,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432158",
@@ -5555,7 +6752,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432157",
@@ -5580,7 +6778,423 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-19",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1213928",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1213928/kuplyu-pshenitsyu-cherkasi-kirovograd-poltava/",
+   "title": "Закупівля сої.Суми. Харків. Полтава. Кіровоград. Черкаси. Київ. Чернігів",
+   "crops": [
+    "Соя",
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 50,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:384189",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-384189/zakupaem-soyu-v-g-nikolaev-g-odessa-srt-a-takzhe-samovyvoz-iz-khozyajstv-i-ehlevatorov/",
+   "title": "Закупаем сою в г.Николаев, г.Одесса (СРТ) а также самовывоз из хозяйств и элеваторов",
+   "crops": [
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 88,
+   "region": "Миколаївська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:587208",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-587208/zakupaem-gorokh-zhyoltyj-zelyonyj-samovyvoz/",
+   "title": "Закуповуємо горох жовтий, зелений, самовивіз",
+   "crops": [
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 100,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "fca",
+    "з господарств"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:623098",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-623098/zakupaem-fasol-samovyvoz-s-mesta-svoim-transportom-po-ukraine/",
+   "title": "Закупаем фасоль. Самовывоз с места своим транспортом по Украине",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "с места",
+    "самовывоз",
+    "своим транспортом"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1310774",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1310774/kuplyu-pelyushku-dikij-goroshok/",
+   "title": "Куплю пелюшку (дикий горошок)",
+   "crops": [
+    "Зернові (різні)"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "з господарства"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:606080",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-606080/zakupaem-nut-dorogo/",
+   "title": "Закупаем нут дорого",
+   "crops": [
+    "Нут"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 88,
+   "region": "Одеська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1308646",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1308646/kupuyemo-ripak-vsya-ukrayina/",
+   "title": "Куплю сою. Дніпро. Полтава. Суми. Харків",
+   "crops": [
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:488334",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-488334/kuplyu-soyu/",
+   "title": "Куплю сою",
+   "crops": [
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 20,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1367268",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1367268/zakupovuyemo-ne-gmo-soyu-vid-virobnikiv-na-postijnij-osnovi/",
+   "title": "Закуповуємо НЕ ГМО сою від виробників на постійній основі",
+   "crops": [
+    "Соя"
+   ],
+   "price": 18200,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Тернопільська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "наш транспорт"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1307703",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1307703/kuplyu-golovnevu-pshenitsyu-kirovograd/",
+   "title": "Куплю соняшник. Миколаїв. Дніпро. Кіровоград. Черкаси. Київ. Полтава",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 100,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1259345",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1259345/zakupovuyemo-ripak-vid-100t/",
+   "title": "Закуповуємо ріпак, від – 100т",
+   "crops": [
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 100,
+   "region": "Закарпатська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:287756",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-287756/zakupaem-gorchitsu-beluyu-zhyoltuyu-chyornuyu/",
+   "title": "Куплю гірчицю жовту, білу, чорну",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 88,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:287762",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-287762/zakupaem-lyon-maslichnyj/",
+   "title": "Закупаем лён масличный",
+   "crops": [
+    "Льон"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 88,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:836629",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-836629/zakupaem-koriandr-dorogo-samovyvoz-s-mesta-pogruzki-bystryj-raschyot-po-faktu-zagruzki/",
+   "title": "Закупаем кориандр дорого! Самовывоз с места погрузки",
+   "crops": [
+    "Коріандр"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 88,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "с места",
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1312709",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1312709/kupuyemo-sonyashnik-poltava-sumi-dnipro/",
+   "title": "Купуємо соняшник.Черкаси. Кіровоград. Полтава. Суми",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 50,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "вивозимо"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1268505",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1268505/zakupovuyemo-sonyashnik/",
+   "title": "Закуповуємо Соняшник сонях. Швидка оплата",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1394531",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1394531/kuplyu-sonyashnik-f2-samoviviz/",
+   "title": "Куплю соняшник ф2 !самовивіз",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agrotender:329251",
@@ -5601,7 +7215,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:293020",
@@ -5622,7 +7237,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:269824",
@@ -5652,7 +7268,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:110224",
@@ -5677,7 +7294,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:154378",
@@ -5701,7 +7319,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:103675",
@@ -5722,7 +7341,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:340225",
@@ -5743,7 +7363,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:175911",
@@ -5766,7 +7387,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:241397",
@@ -5787,7 +7409,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:363565",
@@ -5808,7 +7431,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:235463",
@@ -5829,7 +7453,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360542",
@@ -5853,7 +7478,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:363573",
@@ -5874,7 +7500,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360158",
@@ -5897,7 +7524,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:175869",
@@ -5920,7 +7548,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:356821",
@@ -5941,7 +7570,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:351927",
@@ -5964,7 +7594,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:350474",
@@ -5985,7 +7616,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360543",
@@ -6008,7 +7640,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:340223",
@@ -6031,7 +7664,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:326983",
@@ -6055,7 +7689,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:274725",
@@ -6078,7 +7713,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1231329",
@@ -6101,7 +7737,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:852369",
@@ -6124,7 +7761,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1395151",
@@ -6145,7 +7783,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1395152",
@@ -6166,7 +7805,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1272322",
@@ -6189,7 +7829,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1396253",
@@ -6210,7 +7851,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1396252",
@@ -6233,7 +7875,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:977267",
@@ -6256,7 +7899,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:290921",
@@ -6281,7 +7925,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1352029",
@@ -6305,7 +7950,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:313225",
@@ -6326,7 +7972,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:231581",
@@ -6350,7 +7997,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:938187",
@@ -6371,7 +8019,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:384746",
@@ -6395,7 +8044,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:117789",
@@ -6427,7 +8077,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1042038",
@@ -6448,7 +8099,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:963077",
@@ -6471,7 +8123,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:877873",
@@ -6494,7 +8147,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:963089",
@@ -6517,7 +8171,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:938999",
@@ -6538,7 +8193,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:963084",
@@ -6561,7 +8217,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:888321",
@@ -6584,7 +8241,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:939001",
@@ -6607,7 +8265,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:243478",
@@ -6630,7 +8289,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:310002",
@@ -6651,7 +8311,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1210957",
@@ -6678,7 +8339,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1259374",
@@ -6701,7 +8363,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1264901",
@@ -6724,7 +8387,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1275835",
@@ -6748,7 +8412,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1391836",
@@ -6774,7 +8439,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:732729",
@@ -6796,7 +8462,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:733005",
@@ -6829,7 +8496,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1311472",
@@ -6853,7 +8521,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1373178",
@@ -6874,7 +8543,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1396177",
@@ -6895,7 +8565,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:723410",
@@ -6918,7 +8589,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1372495",
@@ -6941,7 +8613,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1384292",
@@ -6965,7 +8638,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1058913",
@@ -6988,7 +8662,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1053075",
@@ -7011,7 +8686,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1053083",
@@ -7034,7 +8710,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:160035",
@@ -7057,7 +8734,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1261981",
@@ -7080,7 +8758,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:732734",
@@ -7102,7 +8781,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1181678",
@@ -7128,7 +8808,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1311471",
@@ -7149,7 +8830,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1372244",
@@ -7170,7 +8852,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1360519",
@@ -7192,7 +8875,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1309290",
@@ -7213,7 +8897,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1314965",
@@ -7234,7 +8919,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1316811",
@@ -7257,7 +8943,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1048792",
@@ -7278,7 +8965,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:992666",
@@ -7301,7 +8989,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:108111",
@@ -7324,7 +9013,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:711193",
@@ -7348,7 +9038,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:443851",
@@ -7369,7 +9060,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1252990",
@@ -7392,7 +9084,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1275661",
@@ -7413,7 +9106,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1205435",
@@ -7436,7 +9130,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1373174",
@@ -7461,7 +9156,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1370871",
@@ -7482,7 +9178,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1393590",
@@ -7505,7 +9202,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1393595",
@@ -7526,7 +9224,84 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-18",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1396090",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1396090/kuplyu-soyu-gmo-17000-z-pdv/",
+   "title": "Куплю Сою ГМО, 17000 з пдв",
+   "crops": [
+    "Пшениця",
+    "Соя"
+   ],
+   "price": 17000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1321055",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1321055/kupuyemo-sonyashnik/",
+   "title": "Купуємо соняшник в Харківській обл",
+   "crops": [
+    "Пшениця",
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Харківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1372242",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1372242/kupimo-ripak-soyu-sonyashnik-dorogo/",
+   "title": "Купимо ріпак, сою, соняшник дорого",
+   "crops": [
+    "Пшениця",
+    "Кукурудза",
+    "Соя",
+    "Соняшник",
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивозу"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agrotender:363564",
@@ -7549,7 +9324,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360208",
@@ -7571,7 +9347,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:330071",
@@ -7592,7 +9369,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:353717",
@@ -7613,7 +9391,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360209",
@@ -7634,7 +9413,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:344593",
@@ -7655,7 +9435,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:319059",
@@ -7676,7 +9457,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:270239",
@@ -7703,7 +9485,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:330070",
@@ -7724,7 +9507,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:269835",
@@ -7751,7 +9535,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:273560",
@@ -7772,7 +9557,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:339053",
@@ -7795,7 +9581,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:276711",
@@ -7819,7 +9606,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:362488",
@@ -7844,7 +9632,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:362494",
@@ -7865,7 +9654,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:362491",
@@ -7889,7 +9679,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360628",
@@ -7910,7 +9701,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347948",
@@ -7933,7 +9725,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347944",
@@ -7956,7 +9749,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347942",
@@ -7979,7 +9773,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347941",
@@ -8002,7 +9797,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347943",
@@ -8025,7 +9821,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347949",
@@ -8048,7 +9845,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347951",
@@ -8071,7 +9869,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:351573",
@@ -8098,7 +9897,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:363524",
@@ -8122,7 +9922,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:361420",
@@ -8146,7 +9947,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:348419",
@@ -8168,7 +9970,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:353716",
@@ -8190,7 +9993,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:346354",
@@ -8211,7 +10015,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:363417",
@@ -8232,7 +10037,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:339688",
@@ -8255,7 +10061,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347950",
@@ -8278,7 +10085,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347947",
@@ -8301,7 +10109,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:362634",
@@ -8325,7 +10134,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:301697",
@@ -8352,7 +10162,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:353715",
@@ -8373,7 +10184,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:346353",
@@ -8394,7 +10206,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:363562",
@@ -8415,7 +10228,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:339616",
@@ -8438,7 +10252,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:306128",
@@ -8461,7 +10276,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347946",
@@ -8484,7 +10300,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:347945",
@@ -8507,7 +10324,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1328801",
@@ -8528,7 +10346,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1364883",
@@ -8549,7 +10368,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1227384",
@@ -8572,7 +10392,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1386007",
@@ -8595,7 +10416,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:761587",
@@ -8619,7 +10441,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:746891",
@@ -8650,7 +10473,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:777608",
@@ -8671,7 +10495,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1351428",
@@ -8695,7 +10520,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1288024",
@@ -8717,7 +10543,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1352692",
@@ -8738,7 +10565,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:763057",
@@ -8759,7 +10587,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1038866",
@@ -8780,7 +10609,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1349057",
@@ -8802,7 +10632,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1038867",
@@ -8823,7 +10654,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:963789",
@@ -8844,7 +10676,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:963779",
@@ -8868,7 +10701,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1076439",
@@ -8889,7 +10723,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1351727",
@@ -8910,7 +10745,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1344043",
@@ -8931,7 +10767,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1345482",
@@ -8955,7 +10792,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1001198",
@@ -8976,7 +10814,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1224815",
@@ -8999,7 +10838,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1224800",
@@ -9022,7 +10862,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1274110",
@@ -9045,7 +10886,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1296774",
@@ -9068,7 +10910,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1314831",
@@ -9091,7 +10934,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1315241",
@@ -9114,7 +10958,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1386346",
@@ -9137,7 +10982,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1274044",
@@ -9160,7 +11006,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1386347",
@@ -9183,7 +11030,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1305379",
@@ -9206,7 +11054,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1299141",
@@ -9227,7 +11076,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1305198",
@@ -9250,7 +11100,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1350308",
@@ -9271,7 +11122,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1282502",
@@ -9295,7 +11147,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1396095",
@@ -9316,7 +11169,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1396094",
@@ -9339,7 +11193,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1393849",
@@ -9360,7 +11215,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1224819",
@@ -9383,7 +11239,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1224813",
@@ -9406,7 +11263,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "clunya:15123",
@@ -9428,7 +11286,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrorynok:432161",
@@ -9452,7 +11311,413 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-17",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1395960",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1395960/zakupovuyemo-polovinki-soyi-dlya-vlasnikh-potreb/",
+   "title": "Закуповуємо половинки сої для власних потреб",
+   "crops": [
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "транспортом покупця"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1395946",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1395946/kupuyemo-kvasolyu-u-fermeriv-ta-agrarnikh-kompanij/",
+   "title": "Купуємо квасолю у фермерів та аграрних компаній",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 10,
+   "region": "Івано-Франківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "транспортом покупця"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:438886",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-438886/kuplyu-dorogo-semechku-otkhody-semechki-raps-soyu-lyubye-sorta-bez-posrednikov/",
+   "title": "Куплю подсолнух, соняшник базу без черг",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1136007",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1136007/kuplyu-roztoropshu/",
+   "title": "Куплю розторопшу",
+   "crops": [
+    "Розторопша"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Івано-Франківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1185780",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1185780/kuplyu-lon/",
+   "title": "Куплю льон",
+   "crops": [
+    "Льон"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Івано-Франківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1316925",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1316925/kompaniya-z-polshhi-zakupovuye-nasinnya-sonyashniku-sire-ochishhene/",
+   "title": "Компанія з Польщі закуповує насіння соняшнику сире очищене",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 23,
+   "region": "Одеська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366788",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366788/postijna-zakupivlya-girchitsi-biloyi/",
+   "title": "Постійна закупівля гірчиці",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "забираємо"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366791",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366791/kuplyu-girchitsyu-bilu-samoviviz-iz-mistsya/",
+   "title": "Куплю гірчицю. Самовивіз із місця",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Закарпатська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366764",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366764/zakupovuyemo-girchitsyu-bilu/",
+   "title": "Закуповуємо гірчицю білу",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Рівненська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366799",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366799/kuplyu-girchitsyu-bilu-samoviviz-shvidkij-rozrakhunok/",
+   "title": "Куплю гірчицю. Самовивіз. Швидкий розрахунок",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Чернігівська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366765",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366765/kupuyemo-bilu-girchitsyu-po-vsij-ukrayini/",
+   "title": "Купуємо білу гірчицю по всій Україні",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366787",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366787/zakupovuyemo-girchitsyu-bilu-povnij-suprovid/",
+   "title": "Закуповуємо гірчицю білу. Повний супровід",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Черкаська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "вивезення"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366782",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366782/kuplyu-bilu-girchitsyu-postijno/",
+   "title": "Куплю білу гірчицю. Постійно",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Івано-Франківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366784",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366784/potribna-girchitsya-bila-zaberu-z-mistsya/",
+   "title": "Потрібна гірчиця біла. Заберу з місця",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "заберу",
+    "вивозу"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366786",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366786/kuplyu-girchitsyu-bilu/",
+   "title": "Куплю гірчицю",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Тернопільська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "власний транспорт",
+    "вивезення"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366785",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366785/shvidkij-vikup-biloyi-girchitsi-samoviviz/",
+   "title": "Швидкий викуп білої гірчиці. Самовивіз",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "з господарства"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366789",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366789/kuplyu-bilu-girchitsyu-svoyi-mashini/",
+   "title": "Куплю білу гірчицю. Свої машини",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Одеська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-16",
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agrotender:262088",
@@ -9475,7 +11740,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:358919",
@@ -9498,7 +11764,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:346462",
@@ -9524,7 +11791,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:361622",
@@ -9545,7 +11813,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:331423",
@@ -9568,7 +11837,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:359186",
@@ -9590,7 +11860,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:304287",
@@ -9614,7 +11885,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:362425",
@@ -9636,7 +11908,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:345534",
@@ -9658,7 +11931,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:329419",
@@ -9681,7 +11955,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:344031",
@@ -9702,7 +11977,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:251431",
@@ -9726,7 +12002,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:339488",
@@ -9753,7 +12030,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:361768",
@@ -9777,7 +12055,8 @@
    "also_delivery": true,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:264348",
@@ -9798,7 +12077,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:363033",
@@ -9822,7 +12102,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:153308",
@@ -9848,7 +12129,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:264350",
@@ -9871,7 +12153,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:345536",
@@ -9893,7 +12176,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1395998",
@@ -9917,7 +12201,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1185793",
@@ -9940,7 +12225,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1067513",
@@ -9963,7 +12249,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1108658",
@@ -9986,7 +12273,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1067443",
@@ -10009,7 +12297,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1101720",
@@ -10033,7 +12322,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:449969",
@@ -10060,7 +12350,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:432897",
@@ -10083,7 +12374,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:593858",
@@ -10106,7 +12398,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:678424",
@@ -10129,7 +12422,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1230753",
@@ -10152,7 +12446,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1107757",
@@ -10176,7 +12471,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1390389",
@@ -10197,7 +12493,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1396000",
@@ -10221,7 +12518,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1188174",
@@ -10244,7 +12542,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1067335",
@@ -10267,7 +12566,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1272239",
@@ -10288,7 +12588,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1345572",
@@ -10309,7 +12610,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:702392",
@@ -10333,7 +12635,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:732731",
@@ -10354,7 +12657,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1366781",
@@ -10378,7 +12682,204 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-16",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1134201",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1134201/urozhaj-selkhoz-pokupaem-ves/",
+   "title": "Урожай сельхоз покупаем весь",
+   "crops": [
+    "Кукурудза",
+    "Ячмінь",
+    "Гречка",
+    "Тритикале",
+    "Соя",
+    "Горох",
+    "Нут",
+    "Соняшник",
+    "Коріандр"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Миколаївська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-15",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1315760",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1315760/kupuyemo-soyu-ne-gmo/",
+   "title": "Купуємо сою не гмо",
+   "crops": [
+    "Соя",
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Тернопільська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-15",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1304098",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1304098/kuplyu-sochevitsyu-chechevitsu-na-pererobku/",
+   "title": "Куплю сочевицю чечевицу на переробку",
+   "crops": [
+    "Сочевиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "власним транспортом",
+    "забираємо"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-15",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1304097",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1304097/kuplyu-nut-na-pererobku/",
+   "title": "Куплю нут на переробку",
+   "crops": [
+    "Нут"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "власним транспортом",
+    "забираємо"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-15",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1134197",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1134197/zakupaem-urozhaj/",
+   "title": "Закупаем оптом по всей Украине урожай",
+   "crops": [
+    "Кукурудза",
+    "Ячмінь",
+    "Гречка",
+    "Тритикале",
+    "Соя",
+    "Горох",
+    "Соняшник",
+    "Коріандр"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Херсонська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "с места"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-15",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1134200",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1134200/selkhoz-urozhaj-zakupaem/",
+   "title": "Сельхоз урожай закупаем",
+   "crops": [
+    "Кукурудза",
+    "Ячмінь",
+    "Гречка",
+    "Тритикале",
+    "Соя",
+    "Горох",
+    "Соняшник",
+    "Коріандр"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Черкаська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "с места",
+    "самовывозом"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-15",
+   "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1196051",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1196051/kuplyu-gorchitsu/",
+   "title": "Куплю горчицу",
+   "crops": [
+    "Пшениця",
+    "Ячмінь",
+    "Жито",
+    "Овес",
+    "Соя",
+    "Горох",
+    "Ріпак",
+    "Льон",
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Волинська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-15",
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360119",
@@ -10403,7 +12904,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:261667",
@@ -10424,7 +12926,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:332906",
@@ -10450,7 +12953,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:329666",
@@ -10472,7 +12976,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agrotender:360054",
@@ -10494,7 +12999,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1395883",
@@ -10519,7 +13025,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:269440",
@@ -10545,7 +13052,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1206757",
@@ -10566,7 +13074,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:718449",
@@ -10595,7 +13104,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:748095",
@@ -10618,7 +13128,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1134192",
@@ -10649,7 +13160,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1190419",
@@ -10670,7 +13182,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1190421",
@@ -10693,7 +13206,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1190477",
@@ -10714,7 +13228,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:269443",
@@ -10738,7 +13253,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:269444",
@@ -10762,7 +13278,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1206763",
@@ -10789,7 +13306,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1200066",
@@ -10810,7 +13328,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:718452",
@@ -10831,7 +13350,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1206759",
@@ -10859,7 +13379,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   },
   {
    "id": "agro-ukraine:1377697",
@@ -10880,7 +13401,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1377696",
@@ -10901,7 +13423,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:762637",
@@ -10924,7 +13447,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-15",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1286875",
@@ -10945,7 +13469,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-14",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1332690",
@@ -10966,7 +13491,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-14",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "agro-ukraine:1326454",
@@ -10987,7 +13513,8 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-14",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": false
   },
   {
    "id": "clunya:15072",
@@ -11010,321 +13537,26 @@
    "also_delivery": false,
    "dnd": false,
    "posted": "2026-11-14",
-   "first_seen": "2026-11-21"
+   "first_seen": "2026-11-21",
+   "has_phone": true
   }
  ],
  "rejected_today": [
   {
-   "id": "agrotender:339935",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-339935",
-   "title": "КУПУЮ ОВЕС. $ контракт або безготівкова з ПДВ та без",
-   "signs": [
-    "срт-"
-   ]
-  },
-  {
-   "id": "agrotender:336678",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-336678",
-   "title": "пшеница фуражная, продовольственная",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrotender:357733",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-357733",
-   "title": "Кукурудзу СРТ ТИС",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrotender:357788",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-357788",
-   "title": "Пшениця 2 кл СРТ Рені",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrotender:357761",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-357761",
-   "title": "Ячмінь СРТ Ізмаїл",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrotender:353985",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-353985",
-   "title": "Пшеницю 3 кл СРТ Рені",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrotender:248728",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-248728",
-   "title": "Купим пшеницу на экспорт",
-   "signs": [
-    "fob"
-   ]
-  },
-  {
-   "id": "agrotender:271469",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-271469",
-   "title": "Купим кукурузу",
-   "signs": [
-    "с поставкой"
-   ]
-  },
-  {
-   "id": "agrotender:363603",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-363603",
-   "title": "Закупівля соняшнику в Європі",
-   "signs": [
-    "dap",
-    "ddp",
-    "з поставкою"
-   ]
-  },
-  {
-   "id": "agrotender:345775",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-345775",
-   "title": "Закуповуємо ріпак не ГМО",
-   "signs": [
-    "з доставкою"
-   ]
-  },
-  {
-   "id": "agrotender:274727",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-274727",
-   "title": "Закупаем рапс ГМО не ГМО",
-   "signs": [
-    "с доставкой"
-   ]
-  },
-  {
-   "id": "agrotender:338945",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-338945",
-   "title": "Закупаем рапс",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrotender:352736",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-352736",
-   "title": "Соняшник СРТ Південний",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrotender:358060",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-358060",
-   "title": "Ріпак СРТ с.Миронівка",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrotender:271467",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-271467",
-   "title": "Рапс на экспорт",
-   "signs": [
-    "с поставкой"
-   ]
-  },
-  {
-   "id": "agrotender:362039",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-362039",
-   "title": "Купимо зерно безпосередньо у фермера",
-   "signs": [
-    "на елеваторі",
-    "прийом на"
-   ]
-  },
-  {
-   "id": "agrotender:336636",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-336636",
-   "title": "СОЯ",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrotender:354326",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-354326",
-   "title": "Сою СРТ Одеса",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrotender:357732",
-   "source": "agrotender",
-   "url": "https://agrotender.com.ua/board/post-357732",
-   "title": "Ріпак СРТ Одеса",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agro-ukraine:1370812",
+   "id": "agro-ukraine:1392306",
    "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1370812/kompaniya-pererobnik-zdijsnyuye-zakupivlyu-kvasoli/",
-   "title": "Компанія-переробник здійснює закупівлю квасолі",
-   "signs": [
-    "приймаємо"
-   ]
-  },
-  {
-   "id": "agro-ukraine:1371019",
-   "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1371019/zakupka-kvasoli-na-pererobku-konservuvannya/",
-   "title": "Закупка квасолі на переробку, консервування",
-   "signs": [
-    "приймаємо"
-   ]
-  },
-  {
-   "id": "agro-ukraine:1371259",
-   "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1371259/kupimo-zerno-bezposeredno-u-fermera/",
-   "title": "Купимо зерно безпосередньо у фермера",
-   "signs": [
-    "на елеваторі",
-    "прийом на"
-   ]
-  },
-  {
-   "id": "agro-ukraine:497247",
-   "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-497247/kupim-otrubi-pshenichnye/",
-   "title": "Купим сою на экспорт",
-   "signs": [
-    "с поставкой"
-   ]
-  },
-  {
-   "id": "agro-ukraine:1370866",
-   "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1370866/kompaniya-zdijsnyuye-zakupivlyu-ripaku/",
-   "title": "Компанія здійснює закупівлю ріпаку",
-   "signs": [
-    "приймаємо"
-   ]
-  },
-  {
-   "id": "agro-ukraine:1396148",
-   "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1396148/kuplyu-lon-olijnij/",
-   "title": "Куплю льон олійний",
+   "url": "https://agro-ukraine.com/ua/trade/m-1392306/zakupaem-raps-dlya-dalnejshej-promyshlennoj-pererabotki-v-pishhevykh-tselyakh/",
+   "title": "Закупаем рапс для дальнейшей промышленной переработки в пищевых целях",
    "signs": [
     "dap"
-   ]
-  },
-  {
-   "id": "agro-ukraine:1395106",
-   "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1395106/sonyashnik-srt-starokostyantiniv/",
-   "title": "Соняшник СРТ Південний",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agro-ukraine:1294236",
-   "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1294236/kupuyemo-girchitsyu-zhovtu-vid-virobnika/",
-   "title": "Ріпак СРТ Миронівка",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agro-ukraine:1332589",
-   "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1332589/prodam-tovarnu-kartoplyu/",
-   "title": "Ріпак СРТ Одеса",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "clunya:15154",
-   "source": "clunya",
-   "url": "https://clunya.com/orders/zakupivla-sonasniku-v-evropi",
-   "title": "Закупівля соняшнику в Європі",
-   "signs": [
-    "dap",
-    "ddp",
-    "з поставкою"
-   ]
-  },
-  {
-   "id": "clunya:15140",
-   "source": "clunya",
-   "url": "https://clunya.com/orders/sou-srt-odesa",
-   "title": "Сою СРТ Одеса",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "clunya:15129",
-   "source": "clunya",
-   "url": "https://clunya.com/orders/psenica-2-kl-srt-reni-1",
-   "title": "Пшениця 2 кл СРТ Рені",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "clunya:15135",
-   "source": "clunya",
-   "url": "https://clunya.com/orders/sonasnik-srt-pivdennij",
-   "title": "Соняшник СРТ Південний",
-   "signs": [
-    "срт"
-   ]
-  },
-  {
-   "id": "agrorynok:431989",
-   "source": "agrorynok",
-   "url": "https://agrorynok.com.ua/bbs/431989.html",
-   "title": "Куплю пшениця, гречка, просо",
-   "signs": [
-    "dap"
-   ]
-  },
-  {
-   "id": "agrorynok:431045",
-   "source": "agrorynok",
-   "url": "https://agrorynok.com.ua/bbs/431045.html",
-   "title": "Куплю соя",
-   "signs": [
-    "приймаємо"
    ]
   }
- ]
+ ],
+ "phones_enc": {
+  "v": 1,
+  "iter": 250000,
+  "salt": "pjUdms8/AyOTg/+E1xE8WA==",
+  "iv": "pJMpZNxmkQHIamuk",
+  "ct": "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"
+ }
 }
