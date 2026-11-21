@@ -8,7 +8,12 @@ from datetime import date, datetime, timedelta
 import requests
 from bs4 import BeautifulSoup
 
-from rules import RULES
+from rules import RULES, extract_phones
+
+# Оголошення, для яких телефон уже відомий (заповнює run.py). Для решти вже бачених
+# Agrotender ще раз відкриває сторінку, щоб дізнатися телефон.
+HAS_PHONE = set()
+WANT_PHONES = [False]
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
@@ -138,18 +143,22 @@ def agrotender(cutoff, today, is_seen):
                 })
             if fresh_on_page == 0:
                 break
-    # повний опис — лише для ще не бачених
-    for ad in ads:
-        if is_seen(ad["id"]):
+    # спочатку нові оголошення, потім — уже бачені без телефону
+    order = [a for a in ads if not is_seen(a["id"])] + [a for a in ads if is_seen(a["id"])]
+    for ad in order:
+        if is_seen(ad["id"]) and (not WANT_PHONES[0] or ad["id"] in HAS_PHONE):
             continue
         try:
             soup = BeautifulSoup(fetch(ad["url"]), "html.parser")
         except SiteError:
-            ad["detail_failed"] = "time" if DEADLINE[0] and time.time() > DEADLINE[0] else "error"  # опис не завантажився — спробуємо наступного ранку
+            if not is_seen(ad["id"]):
+                ad["detail_failed"] = "time" if DEADLINE[0] and time.time() > DEADLINE[0] else "error"  # опис не завантажився — спробуємо наступного ранку
             continue
         ad["text"] = _txt(soup.select_one("div.desc p.text") or soup.select_one("div.desc"))
         comp = soup.select_one("a[href*='/kompanii/comp-']")
         ad["company_hint"] = _txt(comp)
+        tels = " ".join(a.get("href", "") for a in soup.select("a[href^='tel:']"))
+        ad["phones"] = extract_phones(tels, ad["text"])
     return ads
 
 
@@ -209,6 +218,10 @@ def agro_ukraine(cutoff, today, is_seen):
         full = _txt(body) or (meta.get("content", "") if meta else "")
         if len(full) > len(ad["text"]) - 3:
             ad["text"] = full
+    for ad in ads:
+        # телефон на Agro-Ukraine захищений кнопкою «показати» — його не обходимо;
+        # беремо номер лише якщо автор сам написав його в тексті
+        ad["phones"] = extract_phones(ad["text"])
     return ads
 
 
@@ -272,6 +285,7 @@ def clunya(cutoff, today, is_seen):
                 "price_text": f"{price} {cur}" if price else "", "volume_text": f"{qty} т" if qty and (o.get("units") in (None, "ton")) else "",
                 "author": "", "region_text": (reg.get("name") or "").capitalize(), "date": d,
                 "text": o.get("description") or "",
+                "phones": extract_phones(o.get("firstPhone") or "", o.get("secondPhone") or "", o.get("description") or ""),
             })
         if fresh_on_page == 0 and p > 1:
             break
@@ -322,6 +336,7 @@ def agrorynok(cutoff, today, is_seen):
                 "source": "agrorynok", "id": f"agrorynok:{pid}", "url": f"{AR}/bbs/{pid}.html",
                 "title": "", "rubric": tags, "price_text": "", "volume_text": "",
                 "author": author, "region_text": head, "date": d, "text": desc,
+                "phones": extract_phones(_txt(it.select_one("div.contacts")), desc),
             })
         if fresh_on_page == 0:
             break
