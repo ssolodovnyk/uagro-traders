@@ -27,6 +27,7 @@ DATA = ROOT / "docs" / "data.json"
 SEEN = ROOT / "state" / "seen.json"
 KYIV = ZoneInfo("Europe/Kyiv")
 PAGE_URL = os.environ.get("PAGE_URL", "")
+PHONES_PASSWORD = os.environ.get("PHONES_PASSWORD", "")  # лише із секретів GitHub
 
 
 def load(path, default):
@@ -113,6 +114,15 @@ def main():
     old_ads = data.get("ads", [])
     is_seen = lambda i: i in seen["ids"]  # noqa: E731
 
+    # телефони: зашифрована таблиця «оголошення → номери»; без пароля телефони не збираються взагалі
+    phones = {}
+    if PHONES_PASSWORD:
+        import vault
+        phones = vault.decrypt(data.get("phones_enc"), PHONES_PASSWORD) or {}
+        S.WANT_PHONES[0] = True
+        S.HAS_PHONE.clear()
+        S.HAS_PHONE.update(phones)
+
     statuses, new_cards, rejected = [], [], []
     counts = {"farm": 0, "unclear": 0, "delivery": 0, "duplicate": 0}
 
@@ -128,6 +138,8 @@ def main():
                 st["error"] = "зібрано не все: " + S.PARTIAL[0]
             st["found"] = len(raw)
             for ad in raw:
+                if PHONES_PASSWORD and ad.get("phones"):
+                    phones[ad["id"]] = ad["phones"]
                 if is_seen(ad["id"]):
                     continue
                 if ad.get("detail_failed"):
@@ -181,7 +193,15 @@ def main():
         "new_total": len(new_cards), "new_farm": counts["farm"], "new_unclear": counts["unclear"],
         "rejected_delivery": counts["delivery"], "duplicates": counts["duplicate"], "failed": failed,
     }
-    save(DATA, {"run": run, "sources": statuses, "ads": ads, "rejected_today": rejected})
+    out = {"run": run, "sources": statuses, "ads": ads, "rejected_today": rejected}
+    if PHONES_PASSWORD:
+        ids = {a["id"] for a in ads}
+        phones = {k: v for k, v in phones.items() if k in ids}  # лише для оголошень на сторінці
+        for a in ads:
+            a["has_phone"] = a["id"] in phones
+        out["phones_enc"] = vault.encrypt(phones, PHONES_PASSWORD)
+        run["with_phone"] = len(phones)
+    save(DATA, out)
     save(SEEN, seen)
 
     msg = (f"🌾 Зернотрейдери «з місця» — {today.strftime('%d.%m.%Y')}\n"
