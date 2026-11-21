@@ -137,7 +137,7 @@ async function askPassword(){
   const p = prompt("Пароль для телефонів:"); if (!p) return;
   try{ PHONES = await unlockPhones(p); try{ localStorage.setItem(PKEY, p) }catch(e){} render(); }
   catch(e){ alert("Невірний пароль"); }
-  }
+}
 
 function loadSt(){ try{ ST = JSON.parse(localStorage.getItem(KEY)||"{}") }catch(e){ ST = {} } }
 function saveSt(){ try{ localStorage.setItem(KEY, JSON.stringify(ST)) }catch(e){} }
@@ -225,8 +225,8 @@ document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () =>
 document.querySelectorAll(".filters input").forEach(i => i.addEventListener("input", () => { LIMIT = 50; render(); }));
 document.getElementById("list").addEventListener("click", e => {
   if (e.target.id === "more"){ LIMIT += 50; render(); return; }
-  con  if (e.target.closest(".telbtn")){ askPassword(); return; }
-st b = e.target.closest(".sbtn"); if(!b) return;
+  if (e.target.closest(".telbtn")){ askPassword(); return; }
+  const b = e.target.closest(".sbtn"); if(!b) return;
   const {id, st} = b.dataset; ST[id] === st ? delete ST[id] : ST[id] = st; saveSt(); render();
 });
 document.getElementById("export").addEventListener("click", () => {
