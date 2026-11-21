@@ -1,0 +1,57 @@
+name: Щоранковий пошук трейдерів
+
+on:
+  schedule:
+    # 05:00 і 06:00 за UTC = 8:00 за Києвом (літо / зима). Зайвий запуск сам себе пропускає.
+    - cron: "0 5 * * *"
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}   # кнопка «Run workflow» для ручного запуску
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-run
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Чи вже 8:00 у Києві і чи сьогодні ще не запускались?
+        id: gate
+        run: |
+          H=$(TZ=Europe/Kyiv date +%H); TODAY=$(TZ=Europe/Kyiv date +%F)
+          LAST=$(python3 -c "import json;print(json.load(open('docs/data.json')).get('run',{}).get('run_date',''))" 2>/dev/null || echo "")
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then GO=1
+          elif [ "$H" -ge 8 ] && [ "$LAST" != "$TODAY" ]; then GO=1
+          else GO=0; fi
+          echo "Київ: $H год, останній запуск: $LAST, запускаємо: $GO"
+          echo "go=$GO" >> $GITHUB_OUTPUT
+
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.go == '1'
+        with:
+          python-version: "3.12"
+
+      - name: Запуск агента
+        if: steps.gate.outputs.go == '1'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PAGE_URL: https://ssolodovnyk.github.io/uagro-traders/
+        run: |
+          pip install -r agent/requirements.txt
+          python agent/run.py
+
+      - name: Зберегти результат
+        if: steps.gate.outputs.go == '1'
+        run: |
+          git config user.name "uagro-agent"
+          git config user.email "uagro-agent@users.noreply.github.com"
+          git add docs/data.json state/seen.json
+          git commit -m "Оновлення $(TZ=Europe/Kyiv date +%F)" || echo "Без змін"
+          git push
