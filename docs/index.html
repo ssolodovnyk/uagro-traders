@@ -173,7 +173,9 @@ function renderHead(){
   const r = DATA.run || {};
   document.getElementById("updated").textContent = r.generated_at ? `Оновлено: ${fmtDate(r.generated_at)} о ${r.generated_at.slice(11,16)}` : "Ще не було запусків";
   const src = (DATA.sources||[]).map(s => s.ok
-    ? `<span title="знайдено ${s.found}">✓ ${esc(s.name)}: ${s.new} нових</span>`
+    ? (s.partial
+        ? `<span class="fail" title="${esc(s.error)}">◐ ${esc(s.name)}: ${s.new} нових, зібрано не все</span>`
+        : `<span title="знайдено ${s.found}">✓ ${esc(s.name)}: ${s.new} нових</span>`)
     : `<span class="fail" title="${esc(s.error)}">✗ ${esc(s.name)}: не відкрився</span>`).join("");
   document.getElementById("summary").innerHTML =
     `<b>Сьогодні нових: ${r.new_total ?? 0}</b> — з місця ${r.new_farm ?? 0}, неясних ${r.new_unclear ?? 0}<br>
