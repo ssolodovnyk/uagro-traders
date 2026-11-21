@@ -22,19 +22,30 @@ class SiteError(Exception):
     pass
 
 
-def fetch(url, tries=4):
+# Ліміт часу на один сайт (секунди). run.py ставить його перед кожним сайтом,
+# щоб повільний або заблокований сайт не зупинив увесь запуск.
+DEADLINE = [None]
+
+
+def set_deadline(seconds):
+    DEADLINE[0] = time.time() + seconds if seconds else None
+
+
+def fetch(url, tries=3):
     """Завантажує сторінку. Якщо у сайту прострочений сертифікат — читає без перевірки (лише читання)."""
     last = None
     for i in range(tries):
+        if DEADLINE[0] and time.time() > DEADLINE[0]:
+            raise SiteError("вичерпано час на цей сайт")
         if i:
             SESSION.close()  # після збою — нове з'єднання
         try:
             try:
-                r = SESSION.get(url, timeout=40)
+                r = SESSION.get(url, timeout=(10, 25))
             except requests.exceptions.SSLError:
                 with warnings.catch_warnings():
                     warnings.simplefilter("ignore")
-                    r = SESSION.get(url, timeout=40, verify=False)
+                    r = SESSION.get(url, timeout=(10, 25), verify=False)
             if r.status_code == 200:
                 r.encoding = r.encoding if r.encoding and r.encoding.lower() != "iso-8859-1" else "utf-8"
                 time.sleep(PAUSE)
@@ -44,6 +55,20 @@ def fetch(url, tries=4):
             last = f"{type(e).__name__}: {str(e)[:120]}"
         time.sleep(2 + 3 * i)
     raise SiteError(f"{url}: {last}")
+
+
+PARTIAL = []  # сайти, з яких зібрано не все (час вийшов або сторінка не відкрилась)
+
+
+def list_page(url, ads):
+    """Сторінка списку. Якщо вже щось зібрали — при збої не губимо зібране, а позначаємо «частково»."""
+    try:
+        return fetch(url)
+    except SiteError as e:
+        if not ads:
+            raise
+        PARTIAL.append(str(e)[:150])
+        return None
 
 
 def _txt(el):
@@ -79,7 +104,10 @@ def agrotender(cutoff, today, is_seen):
     for gid in AT_GROUPS:
         for p in range(1, MAX_PAGES + 1):
             url = f"{AT}/board/buy_t{gid}" + (f"_p{p}" if p > 1 else "")
-            soup = BeautifulSoup(fetch(url), "html.parser")
+            html = list_page(url, ads)
+            if html is None:
+                break
+            soup = BeautifulSoup(html, "html.parser")
             items = soup.select("div.postItem")
             if not items:
                 break
@@ -117,7 +145,7 @@ def agrotender(cutoff, today, is_seen):
         try:
             soup = BeautifulSoup(fetch(ad["url"]), "html.parser")
         except SiteError:
-            ad["detail_failed"] = True  # опис не завантажився — спробуємо наступного ранку
+            ad["detail_failed"] = "time" if DEADLINE[0] and time.time() > DEADLINE[0] else "error"  # опис не завантажився — спробуємо наступного ранку
             continue
         ad["text"] = _txt(soup.select_one("div.desc p.text") or soup.select_one("div.desc"))
         comp = soup.select_one("a[href*='/kompanii/comp-']")
@@ -135,7 +163,10 @@ def agro_ukraine(cutoff, today, is_seen):
     for rid in AU_RUBRICS:
         for p in range(1, MAX_PAGES + 1):
             url = f"{AU}/ua/trade/?adv_search=1&r_id={rid}&r_id_all_sub=1&types_id=1&sort_mode=1" + (f"&page={p}" if p > 1 else "")
-            soup = BeautifulSoup(fetch(url), "html.parser")
+            html = list_page(url, ads)
+            if html is None:
+                break
+            soup = BeautifulSoup(html, "html.parser")
             items = soup.select("div.i_l_i_c_mode3")
             if not items:
                 break
@@ -171,7 +202,7 @@ def agro_ukraine(cutoff, today, is_seen):
         try:
             soup = BeautifulSoup(fetch(ad["url"]), "html.parser")
         except SiteError:
-            ad["detail_failed"] = True
+            ad["detail_failed"] = "time" if DEADLINE[0] and time.time() > DEADLINE[0] else "error"
             continue
         meta = soup.select_one("meta[name=description]") or soup.select_one("meta[property='og:description']")
         body = soup.select_one(".i_text, .ad_text, .text_c, [itemprop=description]")
@@ -209,7 +240,10 @@ def _clunya_objects(html):
 def clunya(cutoff, today, is_seen):
     ads, seen_ids = [], set()
     for p in range(1, MAX_PAGES + 1):
-        objs = _clunya_objects(fetch(f"{CL}/orders/page/{p}"))
+        html = list_page(f"{CL}/orders/page/{p}", ads)
+        if html is None:
+            break
+        objs = _clunya_objects(html)
         if not objs:
             if p == 1:
                 raise SiteError("не вдалося прочитати список оголошень (сайт змінив вигляд?)")
@@ -252,7 +286,10 @@ def agrorynok(cutoff, today, is_seen):
     ads = []
     for p in range(1, MAX_PAGES + 1):
         url = f"{AR}/bbs/" if p == 1 else f"{AR}/bbs/{p}?words="
-        soup = BeautifulSoup(fetch(url), "html.parser")
+        html = list_page(url, ads)
+        if html is None:
+            break
+        soup = BeautifulSoup(html, "html.parser")
         items = soup.select("div.bbs_item")
         if not items:
             if p == 1:
