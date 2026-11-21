@@ -58,6 +58,9 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
 .sbtn.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .empty{color:var(--muted);text-align:center;padding:30px 0}
 .tab.more{width:100%;margin-top:6px;font-weight:600}
+.tel{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tel a{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:9px 12px;border-radius:9px}
+.telbtn{margin-top:8px;width:100%;font-weight:600}
 .rej p{margin:8px 0;font-size:14px}
 .rej a{color:var(--accent)}
 .rej small{color:var(--muted)}
@@ -103,6 +106,7 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
     <span>Статуси зберігаються лише на цьому пристрої.</span>
     <button id="export">Зберегти копію статусів</button>
     <label class="btn">Відновити з файлу<input type="file" id="import" accept=".json" hidden></label>
+    <button id="forget">Забути пароль телефонів</button>
   </div>
 </div>
 
@@ -110,7 +114,30 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
 const STATUSES = [["called","Подзвонив"],["no","Не цікаво"],["work","Взяв у роботу"]];
 const SRC = {"agrotender":"Agrotender","agro-ukraine":"Agro-Ukraine","clunya":"Clunya","agrorynok":"Агроринок"};
 const KEY = "uagro-statuses-v1";
-let DATA = {ads:[],sources:[],run:{}}, TAB = "farm", ST = {}, LIMIT = 50;
+let DATA = {ads:[],sources:[],run:{}}, TAB = "farm", ST = {}, LIMIT = 50, PHONES = null;
+const PKEY = "uagro-phones-pass";
+const fmtTel = p => p.replace(/^\+380(\d{2})(\d{3})(\d{2})(\d{2})$/, "+380 $1 $2 $3 $4");
+const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+
+// Розшифровує телефони паролем власника (AES-GCM, ключ з пароля через PBKDF2) прямо в браузері.
+async function unlockPhones(pass){
+  const e = DATA.phones_enc; if (!e) return null;
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pass), "PBKDF2", false, ["deriveKey"]);
+  const key = await crypto.subtle.deriveKey({name:"PBKDF2", salt:b64(e.salt), iterations:e.iter, hash:"SHA-256"},
+    base, {name:"AES-GCM", length:256}, false, ["decrypt"]);
+  const pt = await crypto.subtle.decrypt({name:"AES-GCM", iv:b64(e.iv)}, key, b64(e.ct));
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+async function tryRemembered(){
+  let p = null; try{ p = localStorage.getItem(PKEY) }catch(e){}
+  if (!p || !DATA.phones_enc) return;
+  try{ PHONES = await unlockPhones(p); render(); }catch(e){ try{ localStorage.removeItem(PKEY) }catch(_){} }
+}
+async function askPassword(){
+  const p = prompt("Пароль для телефонів:"); if (!p) return;
+  try{ PHONES = await unlockPhones(p); try{ localStorage.setItem(PKEY, p) }catch(e){} render(); }
+  catch(e){ alert("Невірний пароль"); }
+  }
 
 function loadSt(){ try{ ST = JSON.parse(localStorage.getItem(KEY)||"{}") }catch(e){ ST = {} } }
 function saveSt(){ try{ localStorage.setItem(KEY, JSON.stringify(ST)) }catch(e){} }
@@ -165,6 +192,8 @@ function render(){
         <a class="orig" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">Відкрити оригінал →</a>
         ${STATUSES.map(([k,l]) => `<button class="sbtn${st===k?" on":""}" data-id="${esc(a.id)}" data-st="${k}">${l}</button>`).join("")}
       </div>
+      ${a.has_phone ? (PHONES ? `<div class="tel">${(PHONES[a.id]||[]).map(p => `<a href="tel:${esc(p)}">📞 ${esc(fmtTel(p))}</a>`).join("")}</div>`
+                              : `<button class="sbtn telbtn" data-tel="1">📞 Показати телефон</button>`) : ""}
     </article>`;
   }).join("") + (rest > 0 ? `<button class="tab more" id="more">Показати ще (${rest})</button>` : "");
 }
@@ -196,7 +225,8 @@ document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () =>
 document.querySelectorAll(".filters input").forEach(i => i.addEventListener("input", () => { LIMIT = 50; render(); }));
 document.getElementById("list").addEventListener("click", e => {
   if (e.target.id === "more"){ LIMIT += 50; render(); return; }
-  const b = e.target.closest(".sbtn"); if(!b) return;
+  con  if (e.target.closest(".telbtn")){ askPassword(); return; }
+st b = e.target.closest(".sbtn"); if(!b) return;
   const {id, st} = b.dataset; ST[id] === st ? delete ST[id] : ST[id] = st; saveSt(); render();
 });
 document.getElementById("export").addEventListener("click", () => {
@@ -210,7 +240,10 @@ document.getElementById("import").addEventListener("change", async e => {
 });
 
 loadSt();
-fetch("data.json?t=" + Date.now()).then(r => r.json()).then(d => { DATA = d; renderHead(); render(); })
+document.getElementById("forget").addEventListener("click", () => {
+  try{ localStorage.removeItem(PKEY) }catch(e){} PHONES = null; render(); alert("Пароль забуто на цьому пристрої");
+});
+fetch("data.json?t=" + Date.now()).then(r => r.json()).then(d => { DATA = d; renderHead(); render(); tryRemembered(); })
   .catch(() => { document.getElementById("updated").textContent = "Не вдалося завантажити дані"; });
 </script>
 </body>
