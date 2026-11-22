@@ -46,6 +46,7 @@ jobs:
           PAGE_URL: https://ssolodovnyk.github.io/uagro-traders/
         run: |
           pip install -r agent/requirements.txt
+          python -m playwright install --with-deps chromium
           python agent/run.py
 
       - name: Зберегти результат
