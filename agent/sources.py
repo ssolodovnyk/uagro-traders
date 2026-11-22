@@ -1,4 +1,4 @@
-"""Збирачі оголошень про закупівлю з 4 сайтів. Кожен повертає список «сирих» оголошень."""
+"""Збирачі оголошень про закупівлю з 5 сайтів. Кожен повертає список «сирих» оголошень."""
 import json
 import re
 import time
@@ -343,9 +343,126 @@ def agrorynok(cutoff, today, is_seen):
     return ads
 
 
+# ---------------------------------------------------------------- agro-exchange.com.ua (life AGROS)
+# Сайт малює оголошення через JavaScript, тому відкриваємо його звичайним браузером
+# (Playwright, без входу в акаунт) і читаємо картки так, як їх бачить відвідувач.
+AX = "https://agro-exchange.com.ua"
+
+_AX_CARDS_JS = r"""() => {
+  const sel = 'a[href^="/ogoloshennya/"]';
+  const card = a => { let c = a; while (c.parentElement && c.parentElement.querySelectorAll(sel).length === 1) c = c.parentElement; return c; };
+  const out = [];
+  for (const a of document.querySelectorAll(sel)) {
+    if (a.closest('.recommendation-card')) continue;  // карусель «Рекомендовані» — не дошка
+    out.push({href: a.getAttribute('href'), lines: card(a).innerText.split('\n').map(s => s.trim()).filter(Boolean)});
+  }
+  return out;
+}"""
+_AX_HAS_CARDS_JS = """() => [...document.querySelectorAll('a[href^="/ogoloshennya/"]')].some(a => !a.closest('.recommendation-card'))"""
+
+
+def _ax_parse(lines, today):
+    """Рядки картки: [★ ТОП] / автор / КУПЛЮ / текст… / дата / Показати номер."""
+    low = [s.lower() for s in lines]
+    if "куплю" not in low:
+        return None
+    k = low.index("куплю")
+    head = [s for s in lines[:k] if "топ" not in s.lower()]
+    rest = lines[k + 1:]
+    d, body = None, []
+    for s in rest:
+        if re.fullmatch(r"\d{2}\.\d{2}\.\d{4}", s):
+            d = _date_ru_uk(s, today)
+        elif s.lower() not in ("показати номер", "показать номер"):
+            body.append(s)
+    return {"author": " ".join(head), "text": " ".join(body), "date": d, "is_top": len(head) < k}
+
+
+def _ax_wait(page, url, timeout_ms):
+    page.goto(url, wait_until="domcontentloaded", timeout=45000)
+    page.wait_for_function(_AX_HAS_CARDS_JS, timeout=timeout_ms)
+
+
+def agro_exchange(cutoff, today, is_seen):
+    try:
+        from playwright.sync_api import sync_playwright, Error as PwError
+    except ImportError:
+        raise SiteError("не встановлено Playwright (потрібен, бо сайт показує оголошення через JavaScript)")
+    ads, seen_ids = [], set()
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch()
+        try:
+            page = browser.new_page(user_agent=UA, locale="uk-UA")
+            for p in range(1, MAX_PAGES + 1):
+                if DEADLINE[0] and time.time() > DEADLINE[0]:
+                    if not ads:
+                        raise SiteError("вичерпано час на цей сайт")
+                    PARTIAL.append("вичерпано час на цей сайт")
+                    break
+                url = f"{AX}/?board=buy" + (f"&page={p}" if p > 1 else "")
+                try:
+                    _ax_wait(page, url, 40000 if p == 1 else 20000)
+                except PwError as e:
+                    if p == 1:
+                        raise SiteError(f"{url}: оголошення не з'явились ({str(e).splitlines()[0][:100]})")
+                    break  # сторінок більше немає
+                time.sleep(PAUSE)
+                fresh_on_page, new_on_page = 0, 0
+                for c in page.evaluate(_AX_CARDS_JS):
+                    m = re.search(r"/ogoloshennya/([0-9a-f\-]{20,})", c["href"])
+                    if not m or m.group(1) in seen_ids:
+                        continue
+                    pid = m.group(1)
+                    seen_ids.add(pid)
+                    new_on_page += 1
+                    info = _ax_parse(c["lines"], today)
+                    if not info:
+                        continue
+                    d = info["date"]
+                    if d and d >= cutoff and not info["is_top"]:
+                        fresh_on_page += 1
+                    if not d or d < cutoff:
+                        continue
+                    ads.append({
+                        "source": "agro-exchange", "id": f"agro-exchange:{pid}", "url": f"{AX}/ogoloshennya/{pid}",
+                        "title": "", "rubric": "", "price_text": "", "volume_text": "",
+                        "author": info["author"], "region_text": "", "date": d, "text": info["text"],
+                    })
+                if fresh_on_page == 0 or new_on_page == 0:
+                    break
+            # обрізаний текст («…») дочитуємо зі сторінки оголошення — лише для нових
+            for ad in ads:
+                if is_seen(ad["id"]) or not ad["text"].endswith(("...", "…")):
+                    continue
+                if DEADLINE[0] and time.time() > DEADLINE[0]:
+                    ad["detail_failed"] = "time"
+                    continue
+                try:
+                    page.goto(ad["url"], wait_until="domcontentloaded", timeout=45000)
+                    page.wait_for_selector("text=Опубліковано", timeout=20000)
+                    time.sleep(PAUSE)
+                    lines = [s.strip() for s in page.inner_text("main").split("\n") if s.strip()]
+                    low = [s.lower() for s in lines]
+                    i = low.index("опубліковано") + 2  # після підпису й дати
+                    j = low.index("відкрити оголошення") if "відкрити оголошення" in low else len(lines)
+                    full = " ".join(lines[i:j])
+                    if len(full) > len(ad["text"]) - 3:
+                        ad["text"] = full
+                except (PwError, ValueError):
+                    ad["detail_failed"] = "error"
+        finally:
+            browser.close()
+    for ad in ads:
+        # телефон схований кнопкою «Показати номер» — її не натискаємо;
+        # беремо номер лише якщо автор сам написав його в тексті
+        ad["phones"] = extract_phones(ad["text"])
+    return ads
+
+
 SOURCES = [
     ("agrotender", "Agrotender", "https://agrotender.com.ua/board", agrotender),
     ("agro-ukraine", "Agro-Ukraine", "https://agro-ukraine.com/", agro_ukraine),
     ("clunya", "Clunya", "https://clunya.com/orders/page/1", clunya),
     ("agrorynok", "Агроринок", "https://agrorynok.com.ua/bbs/", agrorynok),
+    ("agro-exchange", "life AGROS", "https://agro-exchange.com.ua/?board=buy", agro_exchange),
 ]
