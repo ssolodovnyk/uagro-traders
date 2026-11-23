@@ -104,7 +104,7 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
   <details class="filters" id="tpl-box">
     <summary>✉️ Текст повідомлення трейдерам</summary>
     <textarea id="tpl" rows="9"></textarea>
-    <div class="hint">Підставляється автоматично: {оголошення} — заголовок оголошення, {сайт} — де знайшли, {культура}, {область}. Текст зберігається на цьому пристрої.</div>
+    <div class="hint">Підставляється автоматично: {оголошення} — заголовок оголошення, {сайт} — де знайшли, {культура} — що купує (наприклад «кукурудзу»), {область}. Текст зберігається на цьому пристрої.</div>
     <div class="row"><button class="sbtn" id="tpl-reset">Повернути стандартний текст</button></div>
   </details>
 
@@ -127,24 +127,29 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
 <script>
 const STATUSES = [["sent","Написав"],["reply","Відповів"],["called","Подзвонив"],["work","Взяв у роботу"],["no","Не цікаво"]];
 const DKEY = "uagro-status-dates-v1", TKEY = "uagro-template-v1";
-const DEFAULT_TPL = `Добрий день! Я керівник платформи UAGRO. Побачив ваше оголошення «{оголошення}» на {сайт}.
-
-UAGRO — майданчик, де фермери щодня розміщують заявки на продаж урожаю з господарства по всій Україні. Тут можна знайти постачальників потрібної вам культури ({культура}) і домовлятися з ними напряму.
-
-Зараз доступне безкоштовне користування — зареєструватися можна тут: https://uagro.trade/
-
-Якщо будуть питання — пишіть, із радістю допоможу.`;
+const DEFAULT_TPL = `Добрий день. Бачив вашу об'яву в інтернеті. Ви купуєте {культура} з господарства?`;
+// попередній стандартний текст — якщо на пристрої збережено саме його, замінюємо на новий
+const OLD_TPL_START = "Добрий день! Я керівник платформи UAGRO.";
 let STD = {}, TPL = DEFAULT_TPL;
 function loadExtra(){
   try{ STD = JSON.parse(localStorage.getItem(DKEY)||"{}") }catch(e){ STD = {} }
   try{ TPL = localStorage.getItem(TKEY) || DEFAULT_TPL }catch(e){ TPL = DEFAULT_TPL }
+  if (TPL.startsWith(OLD_TPL_START)) TPL = DEFAULT_TPL;
+}
+// культура у формі «що купуєте?»: кукурудза → кукурудзу, соя → сою
+const ACC = {"пшениця":"пшеницю","кукурудза":"кукурудзу","соя":"сою","гречка":"гречку","вика":"вику","квасоля":"квасолю",
+  "гірчиця":"гірчицю","сочевиця":"сочевицю","розторопша":"розторопшу","зернові (різні)":"зернові"};
+function cropText(a){
+  const list = (a.crops||[]).map(c => c.toLowerCase()).map(c => ACC[c] || c);
+  if (!list.length || list.length > 3) return "зерно";
+  return list.length === 1 ? list[0] : list.slice(0, -1).join(", ") + " і " + list[list.length - 1];
 }
 function saveExtra(){ try{ localStorage.setItem(DKEY, JSON.stringify(STD)); localStorage.setItem(TKEY, TPL) }catch(e){} }
 const daysSince = iso => iso ? Math.floor((Date.now() - new Date(iso).getTime()) / 86400000) : 0;
 function messageFor(a){
   return TPL.replaceAll("{оголошення}", a.title || "")
             .replaceAll("{сайт}", SRC[a.source] || a.source || "")
-            .replaceAll("{культура}", (a.crops||[]).join(", ").toLowerCase())
+            .replaceAll("{культура}", cropText(a))
             .replaceAll("{область}", a.region || "");
 }
 function toast(text){
