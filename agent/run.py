@@ -92,15 +92,18 @@ def send_telegram(text):
     if not token or not chat:
         print("[Telegram не налаштовано — повідомлення лише тут]\n" + text)
         return False
-    try:
-        r = requests.post(f"https://api.telegram.org/bot{token}/sendMessage",
-                          data={"chat_id": chat, "text": text, "disable_web_page_preview": "true"}, timeout=30)
-        ok = r.ok and r.json().get("ok")
-        print("Telegram:", "надіслано" if ok else f"помилка {r.status_code}")
-        return bool(ok)
-    except requests.RequestException as e:
-        print("Telegram: помилка", type(e).__name__)
-        return False
+    # TELEGRAM_CHAT_ID може містити кілька отримувачів через кому, наприклад «111,222»
+    sent = 0
+    for n, cid in enumerate([c.strip() for c in chat.split(",") if c.strip()], 1):
+        try:
+            r = requests.post(f"https://api.telegram.org/bot{token}/sendMessage",
+                              data={"chat_id": cid, "text": text, "disable_web_page_preview": "true"}, timeout=30)
+            ok = r.ok and r.json().get("ok")
+            print(f"Telegram (отримувач {n}):", "надіслано" if ok else f"помилка {r.status_code} — чи натиснув отримувач Start у боті?")
+            sent += bool(ok)
+        except requests.RequestException as e:
+            print(f"Telegram (отримувач {n}): помилка", type(e).__name__)
+    return sent > 0
 
 
 def main():
