@@ -61,6 +61,12 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
 .tel{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .tel a{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:9px 12px;border-radius:9px}
 .telbtn{margin-top:8px;width:100%;font-weight:600}
+.msg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.mbtn{display:block;text-align:center;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:9px 4px;font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;font-family:inherit}
+.mbtn.tg{border-color:#2a9fd8}.mbtn.wa{border-color:#25a95a}.mbtn.vb{border-color:#7b519d}
+#tpl{width:100%;margin-top:8px;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:14px/1.4 inherit;resize:vertical}
+.hint{font-size:12px;color:var(--muted);margin-top:6px}
+.toast{position:fixed;left:16px;right:16px;bottom:16px;max-width:520px;margin:0 auto;background:var(--ink);color:var(--bg);padding:12px 14px;border-radius:10px;font-size:14px;z-index:5;box-shadow:0 4px 18px rgba(0,0,0,.25)}
 .rej p{margin:8px 0;font-size:14px}
 .rej a{color:var(--accent)}
 .rej small{color:var(--muted)}
@@ -95,7 +101,15 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
     </div>
   </details>
 
+  <details class="filters" id="tpl-box">
+    <summary>✉️ Текст повідомлення трейдерам</summary>
+    <textarea id="tpl" rows="9"></textarea>
+    <div class="hint">Підставляється автоматично: {оголошення} — заголовок оголошення, {сайт} — де знайшли, {культура}, {область}. Текст зберігається на цьому пристрої.</div>
+    <div class="row"><button class="sbtn" id="tpl-reset">Повернути стандартний текст</button></div>
+  </details>
+
   <div id="list"></div>
+  <div id="toast" class="toast" hidden></div>
 
   <details class="filters" id="rej-box" hidden>
     <summary>Відсіяно як CPT / доставка сьогодні <span id="c-rej"></span></summary>
@@ -111,7 +125,49 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
 </div>
 
 <script>
-const STATUSES = [["called","Подзвонив"],["no","Не цікаво"],["work","Взяв у роботу"]];
+const STATUSES = [["sent","Написав"],["reply","Відповів"],["called","Подзвонив"],["work","Взяв у роботу"],["no","Не цікаво"]];
+const DKEY = "uagro-status-dates-v1", TKEY = "uagro-template-v1";
+const DEFAULT_TPL = `Добрий день! Я керівник платформи UAGRO. Побачив ваше оголошення «{оголошення}» на {сайт}.
+
+UAGRO — майданчик, де фермери щодня розміщують заявки на продаж урожаю з господарства по всій Україні. Тут можна знайти постачальників потрібної вам культури ({культура}) і домовлятися з ними напряму.
+
+Зараз доступне безкоштовне користування — зареєструватися можна тут: https://uagro.trade/
+
+Якщо будуть питання — пишіть, із радістю допоможу.`;
+let STD = {}, TPL = DEFAULT_TPL;
+function loadExtra(){
+  try{ STD = JSON.parse(localStorage.getItem(DKEY)||"{}") }catch(e){ STD = {} }
+  try{ TPL = localStorage.getItem(TKEY) || DEFAULT_TPL }catch(e){ TPL = DEFAULT_TPL }
+}
+function saveExtra(){ try{ localStorage.setItem(DKEY, JSON.stringify(STD)); localStorage.setItem(TKEY, TPL) }catch(e){} }
+const daysSince = iso => iso ? Math.floor((Date.now() - new Date(iso).getTime()) / 86400000) : 0;
+function messageFor(a){
+  return TPL.replaceAll("{оголошення}", a.title || "")
+            .replaceAll("{сайт}", SRC[a.source] || a.source || "")
+            .replaceAll("{культура}", (a.crops||[]).join(", ").toLowerCase())
+            .replaceAll("{область}", a.region || "");
+}
+function toast(text){
+  const t = document.getElementById("toast"); t.textContent = text; t.hidden = false;
+  clearTimeout(toast.h); toast.h = setTimeout(() => { t.hidden = true }, 3500);
+}
+async function copyText(text){
+  try{ await navigator.clipboard.writeText(text); return true }
+  catch(e){
+    const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select();
+    let ok = false; try{ ok = document.execCommand("copy") }catch(_){} ta.remove(); return ok;
+  }
+}
+function msgButtons(a, phone){
+  const d = phone.replace(/\D/g, "");
+  const wa = `https://wa.me/${d}?text=${encodeURIComponent(messageFor(a))}`;
+  return `<div class="msg">
+      <a class="mbtn tg" href="https://t.me/+${d}" target="_blank" rel="noopener" data-id="${esc(a.id)}" data-app="Telegram">✈️ Telegram</a>
+      <a class="mbtn wa" href="${esc(wa)}" target="_blank" rel="noopener" data-id="${esc(a.id)}" data-app="WhatsApp">🟢 WhatsApp</a>
+      <a class="mbtn vb" href="viber://chat?number=%2B${d}" data-id="${esc(a.id)}" data-app="Viber">🟣 Viber</a>
+      <button class="mbtn cp" data-id="${esc(a.id)}" data-app="copy">📋 Текст</button>
+    </div>`;
+}
 const SRC = {"agrotender":"Agrotender","agro-ukraine":"Agro-Ukraine","clunya":"Clunya","agrorynok":"Агроринок","agro-exchange":"life AGROS"};
 const KEY = "uagro-statuses-v1";
 let DATA = {ads:[],sources:[],run:{}}, TAB = "farm", ST = {}, LIMIT = 50, PHONES = null;
@@ -174,8 +230,10 @@ function render(){
       a.first_seen === today ? `<span class="b new">Нове сьогодні</span>` : "",
       a.dnd ? `<span class="b dnd">Не турбувати</span>` : "",
       a.also_delivery ? `<span class="b cpt">Також CPT</span>` : "",
-      st ? `<span class="b st">${esc(STATUSES.find(s=>s[0]===st)?.[1]||"")}</span>` : ""
+      st ? `<span class="b st">${esc(STATUSES.find(s=>s[0]===st)?.[1]||"")}${STD[a.id] ? " " + fmtDate(STD[a.id]) : ""}</span>` : "",
+      st === "sent" && daysSince(STD[a.id]) >= 3 ? `<span class="b new">Нагадати — ${daysSince(STD[a.id])} дн. без відповіді</span>` : ""
     ].join("");
+    const phones = PHONES ? (PHONES[a.id]||[]) : [];
     return `<article class="card${st==="no"?" dim":""}">
       ${badges ? `<div class="badges">${badges}</div>` : ""}
       <p class="t">${esc(a.title)}</p>
@@ -192,8 +250,8 @@ function render(){
         <a class="orig" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">Відкрити оригінал →</a>
         ${STATUSES.map(([k,l]) => `<button class="sbtn${st===k?" on":""}" data-id="${esc(a.id)}" data-st="${k}">${l}</button>`).join("")}
       </div>
-      ${a.has_phone ? (PHONES ? `<div class="tel">${(PHONES[a.id]||[]).map(p => `<a href="tel:${esc(p)}">📞 ${esc(fmtTel(p))}</a>`).join("")}</div>`
-                              : `<button class="sbtn telbtn" data-tel="1">📞 Показати телефон</button>`) : ""}
+      ${a.has_phone ? (PHONES ? `<div class="tel">${phones.map(p => `<a href="tel:${esc(p)}">📞 ${esc(fmtTel(p))}</a>`).join("")}</div>${phones.length ? msgButtons(a, phones[0]) : ""}`
+                              : `<button class="sbtn telbtn" data-tel="1">📞 Показати телефон і написати</button>`) : ""}
     </article>`;
   }).join("") + (rest > 0 ? `<button class="tab more" id="more">Показати ще (${rest})</button>` : "");
 }
@@ -226,8 +284,25 @@ document.querySelectorAll(".filters input").forEach(i => i.addEventListener("inp
 document.getElementById("list").addEventListener("click", e => {
   if (e.target.id === "more"){ LIMIT += 50; render(); return; }
   if (e.target.closest(".telbtn")){ askPassword(); return; }
+  const m = e.target.closest(".mbtn");
+  if (m){
+    const a = DATA.ads.find(x => x.id === m.dataset.id); if (!a) return;
+    const app = m.dataset.app;
+    copyText(messageFor(a)).then(ok => toast(app === "copy"
+      ? (ok ? "Текст скопійовано" : "Не вдалося скопіювати")
+      : app === "WhatsApp" ? "Текст уже вставлено в WhatsApp — натисніть «Надіслати»"
+      : (ok ? `Текст скопійовано — у ${app} вставте його в чат і надішліть` : `Відкриваю ${app}`)));
+    if (app !== "copy" && !ST[a.id]){ ST[a.id] = "sent"; STD[a.id] = new Date().toISOString(); saveSt(); saveExtra(); setTimeout(render, 400); }
+    return;
+  }
   const b = e.target.closest(".sbtn"); if(!b) return;
-  const {id, st} = b.dataset; ST[id] === st ? delete ST[id] : ST[id] = st; saveSt(); render();
+  const {id, st} = b.dataset;
+  if (ST[id] === st){ delete ST[id]; delete STD[id] } else { ST[id] = st; STD[id] = new Date().toISOString() }
+  saveSt(); saveExtra(); render();
+});
+document.getElementById("tpl").addEventListener("input", e => { TPL = e.target.value; saveExtra(); });
+document.getElementById("tpl-reset").addEventListener("click", () => {
+  TPL = DEFAULT_TPL; document.getElementById("tpl").value = TPL; saveExtra(); toast("Стандартний текст повернено");
 });
 document.getElementById("export").addEventListener("click", () => {
   const blob = new Blob([JSON.stringify(ST,null,1)], {type:"application/json"});
@@ -239,7 +314,8 @@ document.getElementById("import").addEventListener("change", async e => {
   try{ Object.assign(ST, JSON.parse(await f.text())); saveSt(); render(); alert("Статуси відновлено"); }catch(err){ alert("Файл не підходить"); }
 });
 
-loadSt();
+loadSt(); loadExtra();
+document.getElementById("tpl").value = TPL;
 document.getElementById("forget").addEventListener("click", () => {
   try{ localStorage.removeItem(PKEY) }catch(e){} PHONES = null; render(); alert("Пароль забуто на цьому пристрої");
 });
