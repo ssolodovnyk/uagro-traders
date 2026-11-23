@@ -64,7 +64,8 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
 .msg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
 .mbtn{display:block;text-align:center;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:9px 4px;font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;font-family:inherit}
 .mbtn.tg{border-color:#2a9fd8}.mbtn.wa{border-color:#25a95a}.mbtn.vb{border-color:#7b519d}
-#tpl{width:100%;margin-top:8px;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:14px/1.4 inherit;resize:vertical}
+.mbtn.ln{grid-column:1/-1;border-color:var(--accent);color:var(--accent)}
+#tpl,#tpl2{width:100%;margin-top:6px;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:14px/1.4 inherit;resize:vertical}
 .hint{font-size:12px;color:var(--muted);margin-top:6px}
 .toast{position:fixed;left:16px;right:16px;bottom:16px;max-width:520px;margin:0 auto;background:var(--ink);color:var(--bg);padding:12px 14px;border-radius:10px;font-size:14px;z-index:5;box-shadow:0 4px 18px rgba(0,0,0,.25)}
 .rej p{margin:8px 0;font-size:14px}
@@ -103,7 +104,10 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
 
   <details class="filters" id="tpl-box">
     <summary>✉️ Текст повідомлення трейдерам</summary>
-    <textarea id="tpl" rows="9"></textarea>
+    <div class="hint">Перше повідомлення (кнопки Telegram / WhatsApp / Viber / Текст):</div>
+    <textarea id="tpl" rows="3"></textarea>
+    <div class="hint">Друге повідомлення — з посиланням, коли трейдер відповів (кнопка «🔗 Посилання»):</div>
+    <textarea id="tpl2" rows="4"></textarea>
     <div class="hint">Підставляється автоматично: {оголошення} — заголовок оголошення, {сайт} — де знайшли, {культура} — що купує (наприклад «кукурудзу»), {область}. Текст зберігається на цьому пристрої.</div>
     <div class="row"><button class="sbtn" id="tpl-reset">Повернути стандартний текст</button></div>
   </details>
@@ -130,10 +134,14 @@ const DKEY = "uagro-status-dates-v1", TKEY = "uagro-template-v1";
 const DEFAULT_TPL = `Добрий день. Бачив вашу об'яву в інтернеті. Ви купуєте {культура} з господарства?`;
 // попередній стандартний текст — якщо на пристрої збережено саме його, замінюємо на новий
 const OLD_TPL_START = "Добрий день! Я керівник платформи UAGRO.";
-let STD = {}, TPL = DEFAULT_TPL;
+const TKEY2 = "uagro-template2-v1";
+const DEFAULT_TPL2 = `Подивіться платформу UAGRO — там фермери щодня викладають заявки на продаж урожаю з господарства по всій Україні: https://uagro.trade/
+Реєстрація і користування зараз безкоштовні.`;
+let STD = {}, TPL = DEFAULT_TPL, TPL2 = DEFAULT_TPL2;
 function loadExtra(){
   try{ STD = JSON.parse(localStorage.getItem(DKEY)||"{}") }catch(e){ STD = {} }
   try{ TPL = localStorage.getItem(TKEY) || DEFAULT_TPL }catch(e){ TPL = DEFAULT_TPL }
+  try{ TPL2 = localStorage.getItem(TKEY2) || DEFAULT_TPL2 }catch(e){ TPL2 = DEFAULT_TPL2 }
   if (TPL.startsWith(OLD_TPL_START)) TPL = DEFAULT_TPL;
 }
 // культура у формі «що купуєте?»: кукурудза → кукурудзу, соя → сою
@@ -144,10 +152,10 @@ function cropText(a){
   if (!list.length || list.length > 3) return "зерно";
   return list.length === 1 ? list[0] : list.slice(0, -1).join(", ") + " і " + list[list.length - 1];
 }
-function saveExtra(){ try{ localStorage.setItem(DKEY, JSON.stringify(STD)); localStorage.setItem(TKEY, TPL) }catch(e){} }
+function saveExtra(){ try{ localStorage.setItem(DKEY, JSON.stringify(STD)); localStorage.setItem(TKEY, TPL); localStorage.setItem(TKEY2, TPL2) }catch(e){} }
 const daysSince = iso => iso ? Math.floor((Date.now() - new Date(iso).getTime()) / 86400000) : 0;
-function messageFor(a){
-  return TPL.replaceAll("{оголошення}", a.title || "")
+function messageFor(a, tpl = TPL){
+  return tpl.replaceAll("{оголошення}", a.title || "")
             .replaceAll("{сайт}", SRC[a.source] || a.source || "")
             .replaceAll("{культура}", cropText(a))
             .replaceAll("{область}", a.region || "");
@@ -171,6 +179,7 @@ function msgButtons(a, phone){
       <a class="mbtn wa" href="${esc(wa)}" target="_blank" rel="noopener" data-id="${esc(a.id)}" data-app="WhatsApp">🟢 WhatsApp</a>
       <a class="mbtn vb" href="viber://chat?number=%2B${d}" data-id="${esc(a.id)}" data-app="Viber">🟣 Viber</a>
       <button class="mbtn cp" data-id="${esc(a.id)}" data-app="copy">📋 Текст</button>
+      <button class="mbtn ln" data-id="${esc(a.id)}" data-app="link">🔗 Посилання — друге повідомлення</button>
     </div>`;
 }
 const SRC = {"agrotender":"Agrotender","agro-ukraine":"Agro-Ukraine","clunya":"Clunya","agrorynok":"Агроринок","agro-exchange":"life AGROS"};
@@ -293,6 +302,10 @@ document.getElementById("list").addEventListener("click", e => {
   if (m){
     const a = DATA.ads.find(x => x.id === m.dataset.id); if (!a) return;
     const app = m.dataset.app;
+    if (app === "link"){
+      copyText(messageFor(a, TPL2)).then(ok => toast(ok ? "Повідомлення з посиланням скопійовано — вставте в чат" : "Не вдалося скопіювати"));
+      return;
+    }
     copyText(messageFor(a)).then(ok => toast(app === "copy"
       ? (ok ? "Текст скопійовано" : "Не вдалося скопіювати")
       : app === "WhatsApp" ? "Текст уже вставлено в WhatsApp — натисніть «Надіслати»"
@@ -306,8 +319,10 @@ document.getElementById("list").addEventListener("click", e => {
   saveSt(); saveExtra(); render();
 });
 document.getElementById("tpl").addEventListener("input", e => { TPL = e.target.value; saveExtra(); });
+document.getElementById("tpl2").addEventListener("input", e => { TPL2 = e.target.value; saveExtra(); });
 document.getElementById("tpl-reset").addEventListener("click", () => {
-  TPL = DEFAULT_TPL; document.getElementById("tpl").value = TPL; saveExtra(); toast("Стандартний текст повернено");
+  TPL = DEFAULT_TPL; TPL2 = DEFAULT_TPL2;
+  document.getElementById("tpl").value = TPL; document.getElementById("tpl2").value = TPL2; saveExtra(); toast("Стандартні тексти повернено");
 });
 document.getElementById("export").addEventListener("click", () => {
   const blob = new Blob([JSON.stringify(ST,null,1)], {type:"application/json"});
@@ -321,6 +336,7 @@ document.getElementById("import").addEventListener("change", async e => {
 
 loadSt(); loadExtra();
 document.getElementById("tpl").value = TPL;
+document.getElementById("tpl2").value = TPL2;
 document.getElementById("forget").addEventListener("click", () => {
   try{ localStorage.removeItem(PKEY) }catch(e){} PHONES = null; render(); alert("Пароль забуто на цьому пристрої");
 });
