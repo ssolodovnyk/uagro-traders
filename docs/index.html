@@ -58,6 +58,11 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
 .sbtn.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .empty{color:var(--muted);text-align:center;padding:30px 0}
 .tab.more{width:100%;margin-top:6px;font-weight:600}
+.crow{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+.clabel{font-size:12px;color:var(--muted)}
+.cbtn{border:1px dashed var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 8px;font-size:12px;cursor:pointer}
+.cbtn.on{background:#3b5ba5;color:#fff;border-color:#3b5ba5;border-style:solid}
+.b.ct{background:#e3e9f7;color:#3b5ba5}
 .tel{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .tel a{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:9px 12px;border-radius:9px}
 .telbtn{margin-top:8px;width:100%;font-weight:600}
@@ -99,6 +104,7 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
       <label><input type="checkbox" id="onlynew"> Лише нові сьогодні</label>
       <label><input type="checkbox" id="hidebad" checked> Сховати «не цікаво»</label>
       <label><input type="checkbox" id="nodeal" checked> Показувати оголошення без ціни/обсягу</label>
+      <label><input type="checkbox" id="hidedup" checked> Сховати повтори номерів (після введення пароля)</label>
     </div>
   </details>
 
@@ -130,6 +136,26 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
 
 <script>
 const STATUSES = [["sent","Написав"],["reply","Відповів"],["called","Подзвонив"],["work","Взяв у роботу"],["no","Не цікаво"]];
+// Хто цей трейдер для UAGRO. Зберігається за номером телефону (або за оголошенням, якщо номера немає).
+const CLIENTS = [["active","Діючий користувач"],["forgot","Забутий"],["new","Новий"]];
+const CKEY = "uagro-client-type-v1";
+let CT = {};
+function loadCT(){ try{ CT = JSON.parse(localStorage.getItem(CKEY)||"{}") }catch(e){ CT = {} } }
+function saveCT(){ try{ localStorage.setItem(CKEY, JSON.stringify(CT)) }catch(e){} }
+const ctKey = a => (PHONES && (PHONES[a.id]||[])[0]) || a.id;
+// Повтори номерів: якщо той самий номер є в кількох оголошеннях, лишаємо лише найновіше.
+let DUP_HIDDEN = new Set(), DUP_COUNT = {};
+function computeDups(){
+  DUP_HIDDEN = new Set(); DUP_COUNT = {};
+  if (!PHONES) return;
+  const owner = {};
+  for (const a of DATA.ads){
+    const ps = PHONES[a.id] || [];
+    const o = ps.map(p => owner[p]).find(Boolean);
+    if (o){ DUP_HIDDEN.add(a.id); DUP_COUNT[o] = (DUP_COUNT[o]||0) + 1; }
+    else ps.forEach(p => { owner[p] = a.id });
+  }
+}
 const DKEY = "uagro-status-dates-v1", TKEY = "uagro-template-v1";
 const DEFAULT_TPL = `Добрий день. Бачив вашу об'яву в інтернеті. Ви купуєте {культура} з господарства?`;
 // попередній стандартний текст — якщо на пристрої збережено саме його, замінюємо на новий
@@ -221,8 +247,11 @@ function render(){
   const pmin=num("pmin"), pmax=num("pmax"), vmin=num("vmin"), vmax=num("vmax");
   const onlyNew=document.getElementById("onlynew").checked, hideBad=document.getElementById("hidebad").checked, keepUnknown=document.getElementById("nodeal").checked;
   const counts = {farm:0, unclear:0};
+  const hideDup = document.getElementById("hidedup").checked;
+  computeDups();
   const shown = DATA.ads.filter(a => {
     const st = ST[a.id];
+    if (hideDup && DUP_HIDDEN.has(a.id)) return false;
     if (hideBad && st === "no") return false;
     if (onlyNew && a.first_seen !== today) return false;
     const uah = a.currency === "грн" ? a.price : null;
@@ -245,9 +274,11 @@ function render(){
       a.dnd ? `<span class="b dnd">Не турбувати</span>` : "",
       a.also_delivery ? `<span class="b cpt">Також CPT</span>` : "",
       st ? `<span class="b st">${esc(STATUSES.find(s=>s[0]===st)?.[1]||"")}${STD[a.id] ? " " + fmtDate(STD[a.id]) : ""}</span>` : "",
-      st === "sent" && daysSince(STD[a.id]) >= 3 ? `<span class="b new">Нагадати — ${daysSince(STD[a.id])} дн. без відповіді</span>` : ""
+      st === "sent" && daysSince(STD[a.id]) >= 3 ? `<span class="b new">Нагадати — ${daysSince(STD[a.id])} дн. без відповіді</span>` : "",
+      CT[ctKey(a)] ? `<span class="b ct">${esc(CLIENTS.find(c=>c[0]===CT[ctKey(a)])?.[1]||"")}</span>` : ""
     ].join("");
     const phones = PHONES ? (PHONES[a.id]||[]) : [];
+    const ck = CT[ctKey(a)];
     return `<article class="card${st==="no"?" dim":""}">
       ${badges ? `<div class="badges">${badges}</div>` : ""}
       <p class="t">${esc(a.title)}</p>
@@ -264,6 +295,10 @@ function render(){
         <a class="orig" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">Відкрити оригінал →</a>
         ${STATUSES.map(([k,l]) => `<button class="sbtn${st===k?" on":""}" data-id="${esc(a.id)}" data-st="${k}">${l}</button>`).join("")}
       </div>
+      <div class="crow"><span class="clabel">Для UAGRO:</span>
+        ${CLIENTS.map(([k,l]) => `<button class="cbtn${ck===k?" on":""}" data-ck="${esc(ctKey(a))}" data-ct="${k}">${l}</button>`).join("")}
+      </div>
+      ${DUP_COUNT[a.id] ? `<div class="sign">Цей номер є ще в ${DUP_COUNT[a.id]} оголошенн${DUP_COUNT[a.id] === 1 ? "і" : "ях"} — їх сховано як повтори</div>` : ""}
       ${a.has_phone ? (PHONES ? `<div class="tel">${phones.map(p => `<a href="tel:${esc(p)}">📞 ${esc(fmtTel(p))}</a>`).join("")}</div>${phones.length ? msgButtons(a, phones[0]) : ""}`
                               : `<button class="sbtn telbtn" data-tel="1">📞 Показати телефон і написати</button>`) : ""}
     </article>`;
@@ -280,7 +315,7 @@ function renderHead(){
     : `<span class="fail" title="${esc(s.error)}">✗ ${esc(s.name)}: не відкрився</span>`).join("");
   document.getElementById("summary").innerHTML =
     `<b>Сьогодні нових: ${r.new_total ?? 0}</b> — з місця ${r.new_farm ?? 0}, неясних ${r.new_unclear ?? 0}<br>
-     <span class="sub">Відсіяно CPT/доставка: ${r.rejected_delivery ?? 0} · дублів: ${r.duplicates ?? 0}</span>
+     <span class="sub">Відсіяно CPT/доставка: ${r.rejected_delivery ?? 0} · дублів: ${r.duplicates ?? 0}${r.dup_phones != null ? ` · номерів, що вже були: ${r.dup_phones}` : ""}</span>
      <div class="src">${src}</div>`;
   const rej = DATA.rejected_today || [];
   if (rej.length){
@@ -298,6 +333,8 @@ document.querySelectorAll(".filters input").forEach(i => i.addEventListener("inp
 document.getElementById("list").addEventListener("click", e => {
   if (e.target.id === "more"){ LIMIT += 50; render(); return; }
   if (e.target.closest(".telbtn")){ askPassword(); return; }
+  const c = e.target.closest(".cbtn");
+  if (c){ const {ck, ct} = c.dataset; CT[ck] === ct ? delete CT[ck] : CT[ck] = ct; saveCT(); render(); return; }
   const m = e.target.closest(".mbtn");
   if (m){
     const a = DATA.ads.find(x => x.id === m.dataset.id); if (!a) return;
@@ -334,7 +371,7 @@ document.getElementById("import").addEventListener("change", async e => {
   try{ Object.assign(ST, JSON.parse(await f.text())); saveSt(); render(); alert("Статуси відновлено"); }catch(err){ alert("Файл не підходить"); }
 });
 
-loadSt(); loadExtra();
+loadSt(); loadExtra(); loadCT();
 document.getElementById("tpl").value = TPL;
 document.getElementById("tpl2").value = TPL2;
 document.getElementById("forget").addEventListener("click", () => {
