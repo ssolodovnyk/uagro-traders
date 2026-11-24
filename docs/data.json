@@ -1,14 +1,15 @@
 {
  "run": {
-  "generated_at": "2026-11-23T14:52+02:00",
-  "run_date": "2026-11-23",
-  "new_total": 1,
-  "new_farm": 0,
-  "new_unclear": 1,
-  "rejected_delivery": 0,
-  "duplicates": 0,
+  "generated_at": "2026-11-24T08:47+02:00",
+  "run_date": "2026-11-24",
+  "new_total": 99,
+  "new_farm": 65,
+  "new_unclear": 34,
+  "rejected_delivery": 3,
+  "duplicates": 65,
   "failed": [],
-  "with_phone": 261
+  "dup_phones": 21,
+  "with_phone": 267
  },
  "sources": [
   {
@@ -17,7 +18,7 @@
    "url": "https://agrotender.com.ua/board",
    "ok": true,
    "error": "",
-   "found": 185,
+   "found": 165,
    "new": 1
   },
   {
@@ -26,8 +27,8 @@
    "url": "https://agro-ukraine.com/",
    "ok": true,
    "error": "",
-   "found": 471,
-   "new": 0
+   "found": 460,
+   "new": 18
   },
   {
    "key": "clunya",
@@ -35,7 +36,7 @@
    "url": "https://clunya.com/orders/page/1",
    "ok": true,
    "error": "",
-   "found": 61,
+   "found": 58,
    "new": 0
   },
   {
@@ -48,16 +49,1508 @@
    "new": 0
   },
   {
+   "key": "agrorynok-bid",
+   "name": "Агроринок — майданчик",
+   "url": "https://agrorynok.com.ua/zerno-i-maslichnie/bid",
+   "ok": true,
+   "error": "",
+   "found": 10,
+   "new": 3
+  },
+  {
    "key": "agro-exchange",
    "name": "life AGROS",
    "url": "https://agro-exchange.com.ua/?board=buy",
    "ok": true,
    "error": "",
    "found": 5,
-   "new": 0
+   "new": 1
+  },
+  {
+   "key": "zernoua",
+   "name": "ZernoUA",
+   "url": "https://zernoua.com/ua/board/",
+   "ok": true,
+   "error": "",
+   "found": 147,
+   "new": 68
+  },
+  {
+   "key": "zerno-agrotender",
+   "name": "Agrotender Закупівля",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "ok": true,
+   "error": "",
+   "found": 9,
+   "new": 8
   }
  ],
  "ads": [
+  {
+   "id": "zerno-agrotender:6a9a8f1113897684a097796c",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Кукурудза",
+   "crops": [
+    "Кукурудза"
+   ],
+   "price": 3500,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-24",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:6a7194925d8a9c2f8211eb2b",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Ячмінь",
+   "crops": [
+    "Ячмінь"
+   ],
+   "price": 4000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": "Козелецький район",
+   "company": "Ферма Савин Агро",
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-24",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:6ae3758ba734370bd56a5482",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Соняшник",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": 16000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": "Fenix Agro",
+   "terms": "farm",
+   "signs": [
+    "fca",
+    "склад продавця"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-24",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:6b053367a734370bd57ec69c",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Пшениця 4кл",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": 5000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Волинська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "з господарства"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-24",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:687cf1fee93bac810eeadbaf",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Пшениця 4кл",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": null,
+   "district": null,
+   "company": "МНТ-АГРО",
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-24",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:687a9165e93bac810ee9b204",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Соняшник",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": 17000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": "ГРОУН-АГРО",
+   "terms": "farm",
+   "signs": [
+    "exw",
+    "склад продавця"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-24",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:687cba77e93bac810eeaa7e7",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Просо",
+   "crops": [
+    "Просо"
+   ],
+   "price": 16000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-24",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:6895fa7e539fb8747fd610c5",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Просо",
+   "crops": [
+    "Просо"
+   ],
+   "price": 12500,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Харківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "власним транспортом",
+    "забираємо"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-24",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agrotender:357310",
+   "source": "agrotender",
+   "url": "https://agrotender.com.ua/board/post-357310",
+   "title": "Куплю соняшник,ріпак,сою",
+   "crops": [
+    "Соя",
+    "Соняшник",
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 1,
+   "region": "Дніпропетровська обл.",
+   "district": "Криворізький р-н",
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1029730",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1029730/kuplyu-grechikhu-dorogo/",
+   "title": "Куплю гречиху ДОРОГО",
+   "crops": [
+    "Гречка"
+   ],
+   "price": 45000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1220702",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1220702/kuplyu-krupu-grechanu-smazhenu-i-zelenu/",
+   "title": "Куплю крупу гречану смажену и несмажену",
+   "crops": [
+    "Гречка"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Харківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1301698",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1301698/kuplyu-ris-kamolino-tat-25kg/",
+   "title": "Куплю рис Камолино tat 25кг",
+   "crops": [
+    "Рис"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 2,
+   "region": "Харківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1205770",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1205770/tov-agro-pritok-zakupaet-pshenitsu/",
+   "title": "ТОВ \"Агро Приток\" закупает пшеницу",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": 5000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "с места"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1393053",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1393053/kuplyu-nekonditsiyu-vidkhodi-zernovikh-i-olijnikh-kultur/",
+   "title": "Куплю некондицію (відходи) зернових і олійних культур",
+   "crops": [
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Черкаська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1394941",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1394941/nekonditsiyu-kuplyu/",
+   "title": "Некондицію куплю",
+   "crops": [
+    "Кукурудза",
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Івано-Франківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1393612",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1393612/sorgo-proso-kuplyu/",
+   "title": "Сорго просо куплю",
+   "crops": [
+    "Просо",
+    "Сорго",
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Одеська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1394940",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1394940/kuplyu-sorgo-u-gospodarstv/",
+   "title": "Куплю сорго у господарств",
+   "crops": [
+    "Просо",
+    "Сорго",
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Черкаська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1393046",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1393046/kukurudzu-sukhu-kuplyu-gurtom/",
+   "title": "Кукурудзу суху куплю гуртом",
+   "crops": [
+    "Кукурудза",
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1392456",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1392456/nekonditsiyu-kupuyu-u-gospodarstv/",
+   "title": "Некондицію купую у господарств",
+   "crops": [
+    "Пшениця",
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": true,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:913957",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-913957/kuplyu-soyu-po-2-f/",
+   "title": "Куплю сою по Дорого",
+   "crops": [
+    "Соя"
+   ],
+   "price": 290,
+   "currency": "$",
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1042337",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1042337/kuplyu-podsolnechnik-dorogo/",
+   "title": "Куплю подсолнечник дорого",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": 11000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1341510",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1341510/kuplyu-yadro-sonyashnika/",
+   "title": "Куплю ядро соняшника",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Харківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1320956",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1320956/kuplyu-sonyashnik/",
+   "title": "Куплю соняшник, ріпак, сою",
+   "crops": [
+    "Соя",
+    "Соняшник",
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1396873",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1396873/kuplyu-sonyashnik-na-eksport/",
+   "title": "Куплю Соняшник на експорт",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": 15500,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1393049",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1393049/kuplyu-sonyashnik-gurtom/",
+   "title": "Куплю соняшник гуртом",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Черкаська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1393609",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1393609/kuplyu-lon-u-gospodarstv/",
+   "title": "Куплю льон у господарств",
+   "crops": [
+    "Льон"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Одеська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:309046",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-309046/kuplyu-podsolnechnik/",
+   "title": "Куплю подсолнечник и отходы проблемный на самовывоз",
+   "crops": [
+    "Соняшник",
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "agrorynok-bid:55753",
+   "source": "agrorynok-bid",
+   "url": "https://agrorynok.com.ua/zerno-i-maslichnie/55753.html",
+   "title": "Купую: Просо (жовте, червоне, чорне)",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 20,
+   "region": "Івано-Франківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": true
+  },
+  {
+   "id": "agrorynok-bid:91342",
+   "source": "agrorynok-bid",
+   "url": "https://agrorynok.com.ua/zerno-i-maslichnie/91342.html",
+   "title": "Купую: Льон",
+   "crops": [
+    "Льон"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 230,
+   "region": "Івано-Франківська обл.",
+   "district": null,
+   "company": "ТОВ \"Крок-Імекстрейд\" Івано-Франківська обл",
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "з господарства"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": true
+  },
+  {
+   "id": "agrorynok-bid:91425",
+   "source": "agrorynok-bid",
+   "url": "https://agrorynok.com.ua/zerno-i-maslichnie/91425.html",
+   "title": "Купую: Просо (жовте, червоне)",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": "ТОВ Полтавська обл",
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "своїм транспортом",
+    "забираємо"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": true
+  },
+  {
+   "id": "agro-exchange:19e9e80f-440c-4877-b209-bb63149de476",
+   "source": "agro-exchange",
+   "url": "https://agro-exchange.com.ua/ogoloshennya/19e9e80f-440c-4877-b209-bb63149de476",
+   "title": "Куплю соя, соняшник",
+   "crops": [
+    "Соя",
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 50,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": "Агро",
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "своїм транспортом",
+    "забираємо"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:31691",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-31691/",
+   "title": "Закупаем ПРОБЛЕМНУЮ ПШЕНИЦУ (битую, проросшую )постоянно. Самовывоз. Быстро. Дорого",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:39893",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-39893/",
+   "title": "Закупаем ФУРАЖНУЮ ПШЕНИЦУ.Самовывоз.Быстро.Дорого",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:62686",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-62686/",
+   "title": "Куплю пшеницю",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": 6000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53258",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53258/",
+   "title": "Закупаем пшеницю 1-6 кл проблемне и отходи.Самовивоз",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:22934",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-22934/",
+   "title": "ЗАКУПАЕМ ОТХОДЫ КУКУРУЗЫ постоянно (содержание битых до 70%).Самовывоз.Быстро",
+   "crops": [
+    "Кукурудза"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:25004",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-25004/",
+   "title": "Куплю кукурудзу",
+   "crops": [
+    "Пшениця",
+    "Кукурудза",
+    "Ячмінь",
+    "Жито",
+    "Гречка",
+    "Просо",
+    "Сорго",
+    "Соя",
+    "Горох",
+    "Квасоля",
+    "Соняшник",
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:25069",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-25069/",
+   "title": "Куплю відходи",
+   "crops": [
+    "Пшениця",
+    "Кукурудза",
+    "Просо",
+    "Соя",
+    "Соняшник",
+    "Зерновідходи"
+   ],
+   "price": 6000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53264",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53264/",
+   "title": "Закупаем кукурузу и проблемную и отходи.Самовивоз",
+   "crops": [
+    "Кукурудза"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:26889",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-26889/",
+   "title": "Закупаем ЯЧМЕНЬ.Нового урожая постоянно.Оплата сразу. Самовывоз или доставка. Дорого",
+   "crops": [
+    "Ячмінь"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:36271",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-36271/",
+   "title": "Закупка на крупу Полтава",
+   "crops": [
+    "Пшениця",
+    "Ячмінь",
+    "Гречка",
+    "Просо",
+    "Сорго",
+    "Горох",
+    "Соняшник"
+   ],
+   "price": 6500,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53259",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53259/",
+   "title": "Закупаем ячмень проблемний и отходи.Самовивоз",
+   "crops": [
+    "Ячмінь"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53263",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53263/",
+   "title": "Закупаем семечку подсолнуха и проблемную и отходи.Самовивоз",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:23187",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-23187/",
+   "title": "Куплю сою ГМО та не ГМО",
+   "crops": [
+    "Соя"
+   ],
+   "price": 12500,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Львівська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53262",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53262/",
+   "title": "Закупаем сою проблемную и отходи.Самовивоз",
+   "crops": [
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53267",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53267/",
+   "title": "Закупаем рапс и проблемное и отходи. Самовивоз",
+   "crops": [
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:52461",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-52461/",
+   "title": "Купуємо зерно гречки",
+   "crops": [
+    "Гречка"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53261",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53261/",
+   "title": "Закупаем гречиху проблемную и отходи.Самовивоз",
+   "crops": [
+    "Гречка"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:31097",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-31097/",
+   "title": "Закупаем ПРОСО ЖЕЛТОЕ.Самовывоз. Быстро",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53265",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53265/",
+   "title": "Закупаем просо и проблемное и отходи. Самовивоз",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53266",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53266/",
+   "title": "Закупаем жито и проблемное и отходи. Самовивоз",
+   "crops": [
+    "Жито"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:22880",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-22880/",
+   "title": "Закупаем ОВЕС. Нового урожая Постоянно.Самовывоз. Быстро",
+   "crops": [
+    "Овес"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Чернігівська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:60031",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-60031/",
+   "title": "Закупівлі",
+   "crops": [
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:23969",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-23969/",
+   "title": "Закупаем ГОРОХ постоянно.Самовывоз.Быстро",
+   "crops": [
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:54700",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-54700/",
+   "title": "Куплю зерно гороху жовтого",
+   "crops": [
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "з господарств"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53260",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53260/",
+   "title": "Закупаем горох проблемний и отходи.Самовивоз",
+   "crops": [
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:40953",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40953/",
+   "title": "Купуємо: квасоля біла/чорна дрібна (2026)",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:38221",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-38221/",
+   "title": "Куплю гірчицю",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": 37000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53269",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53269/",
+   "title": "Закупаем горчица и проблемное и отходи. Самовивоз",
+   "crops": [
+    "Гірчиця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:56463",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-56463/",
+   "title": "Куплю льон",
+   "crops": [
+    "Сочевиця",
+    "Льон"
+   ],
+   "price": 30000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53268",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53268/",
+   "title": "Закупаем третикале и проблемное и отходи. Самовивоз",
+   "crops": [
+    "Тритикале"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-23",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
   {
    "id": "agrotender:362029",
    "source": "agrotender",
@@ -3057,6 +4550,35 @@
    "has_phone": true
   },
   {
+   "id": "zernoua:60767",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-60767/",
+   "title": "Куплю овес, гречку в Івано-Франківській, Тернопільській, Львівській обл",
+   "crops": [
+    "Пшениця",
+    "Овес",
+    "Гречка",
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Тернопільська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "з господарства",
+    "з поля"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-21",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
    "id": "agro-ukraine:759497",
    "source": "agro-ukraine",
    "url": "https://agro-ukraine.com/ua/trade/m-759497/srochno-kuplyu-pshenitsu-i-kukuruzu-s-ehlivatorov/",
@@ -4432,6 +5954,99 @@
    "posted": "2026-11-21",
    "first_seen": "2026-11-21",
    "has_phone": true
+  },
+  {
+   "id": "zernoua:22881",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-22881/",
+   "title": "Закупаем ПРОБЛЕМНУЮ ПШЕНИЦУ (проросшая, сажка и др) Быстро. Самовывоз",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:18725",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-18725/",
+   "title": "Подсолнечник",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:45607",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-45607/",
+   "title": "Закуповуємо горох просо та пшеницю",
+   "crops": [
+    "Пшениця",
+    "Просо",
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:44522",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-44522/",
+   "title": "Срочно куплю горох",
+   "crops": [
+    "Просо",
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-20",
+   "first_seen": "2026-11-24",
+   "has_phone": false
   },
   {
    "id": "clunya:15202",
@@ -6613,6 +8228,269 @@
    "dnd": false,
    "posted": "2026-11-20",
    "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:22884",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-22884/",
+   "title": "Закупаем ФУРАЖНУЮ ПШЕНИЦУ Нового урожая круглый год.Самовывоз.Быстро",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:31661",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-31661/",
+   "title": "Закупаем ОТХОДЫ ПШЕНИЦЫ (полезные ) постоянно. Самовывоз. Быстро. Дорого",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:32197",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-32197/",
+   "title": "Закупаем ПРОБЛЕМНУЮ ПШЕНИЦУ (проросшую, сажка тп). Самовывоз. Быстро.Дорого",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:37807",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-37807/",
+   "title": "Закупаем ТВЕРДУЮ ПШЕНИЦУ. постоянно.Быстро",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:53434",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-53434/",
+   "title": "Куплю Закупаем БИТУЮ КУКУРУЗУ круглый год.Влага до 14%.Самовывоз. Быстро.Дорого",
+   "crops": [
+    "Кукурудза"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:33906",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-33906/",
+   "title": "Закупаем ЯЧМЕНЬ. Постоянно.Самовывоз.Быстро",
+   "crops": [
+    "Ячмінь"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:22882",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-22882/",
+   "title": "ЗАКУПАЕМ ЖЕЛТОЕ ПРОСО постоянно. Самовывоз. Быстро",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:57558",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-57558/",
+   "title": "Закупаем ЖИТО постоянно.Самовывоз. Быстро.Дорого",
+   "crops": [
+    "Жито"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:32141",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-32141/",
+   "title": "Закупаем ОВЕС (натура выше 480 ), Самовывоз. Быстро",
+   "crops": [
+    "Овес"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:22879",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-22879/",
+   "title": "ЗАкупаем ОТХОДЫ и НЕкондицию гороха (половинки, с, пелюшки и порч, и т.д)",
+   "crops": [
+    "Горох",
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:45316",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-45316/",
+   "title": "Закупаем ГОРОХ ЖЕЛТЫЙ постоянно.Самовывоз.Оплата сразу",
+   "crops": [
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-19",
+   "first_seen": "2026-11-24",
    "has_phone": false
   },
   {
@@ -10231,6 +12109,227 @@
    "has_phone": true
   },
   {
+   "id": "zernoua:51055",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-51055/",
+   "title": "Куплю ячмінь",
+   "crops": [
+    "Пшениця",
+    "Ячмінь",
+    "Гречка",
+    "Просо",
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:46377",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-46377/",
+   "title": "Закуповуємо Соняшник. Швидка оплата",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Дніпропетровська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:44586",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-44586/",
+   "title": "Куплю соняшник (сонях, подсолнух, семечка). Швидка оплата",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Одеська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:44384",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-44384/",
+   "title": "Закупаем сою",
+   "crops": [
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:47487",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-47487/",
+   "title": "Підприємство закуповує гречиху",
+   "crops": [
+    "Пшениця",
+    "Гречка",
+    "Просо",
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:49869",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-49869/",
+   "title": "Куплю гречку, просо, горох та пшеницю",
+   "crops": [
+    "Пшениця",
+    "Гречка",
+    "Просо",
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:50210",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-50210/",
+   "title": "Куплю просо жовте та червоне",
+   "crops": [
+    "Пшениця",
+    "Гречка",
+    "Просо",
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:46570",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-46570/",
+   "title": "Підприємство закуповує просо, пшеницю та горох",
+   "crops": [
+    "Пшениця",
+    "Просо",
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:22788",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-22788/",
+   "title": "Закупаем Пелюшку (горох полевой), дорого, самовывоз",
+   "crops": [
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовывоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-18",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
    "id": "clunya:15229",
    "source": "clunya",
    "url": "https://clunya.com/orders/kupuemo-sumisi-suhofruktiv-optom-virobniki-ta-fasuval-niki-cernigivs-ka-obl",
@@ -12740,6 +14839,323 @@
    "dnd": false,
    "posted": "2026-11-18",
    "first_seen": "2026-11-21",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:61651",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-61651/",
+   "title": "Купуємо ТВЕРДУ пшеницю",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 15000,
+   "region": "Київська обл.",
+   "district": "Броварського р-н",
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": true
+  },
+  {
+   "id": "zernoua:9997",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-9997/",
+   "title": "Компанія на постійній основі проводить закупівлю зернових культур та інші",
+   "crops": [
+    "Пшениця",
+    "Кукурудза",
+    "Ячмінь",
+    "Жито",
+    "Овес",
+    "Соя",
+    "Зерновідходи"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Волинська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": true
+  },
+  {
+   "id": "zernoua:40115",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40115/",
+   "title": "Закупляемо пшеницю 1-6кл и отходи на самовивоз",
+   "crops": [
+    "Пшениця"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:18732",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-18732/",
+   "title": "Купляємо зерно",
+   "crops": [
+    "Пшениця",
+    "Кукурудза",
+    "Ячмінь",
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:40122",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40122/",
+   "title": "Закупляем кукурудзу и отходи на самовивоз",
+   "crops": [
+    "Кукурудза"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:40116",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40116/",
+   "title": "Закупляемо ячмень и отходи на самовивоз",
+   "crops": [
+    "Ячмінь"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:40120",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40120/",
+   "title": "Закупаем семечку подсолнуха отходи на самовивоз",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:40119",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40119/",
+   "title": "Закупаем сою и отоди на самовивоз",
+   "crops": [
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:40132",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40132/",
+   "title": "Закупаем рапс и отходи на самовивоз",
+   "crops": [
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:40118",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40118/",
+   "title": "Закупляемо гречиху и отходи на самовивоз",
+   "crops": [
+    "Гречка"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:40133",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40133/",
+   "title": "Закупаем просо и отходи на самовивоз",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:40124",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40124/",
+   "title": "Закупляемо овес и отходи на самовивоз",
+   "crops": [
+    "Овес"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:40117",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-40117/",
+   "title": "Закупляем горох жолтий и зелений и отходи на самовивоз",
+   "crops": [
+    "Горох"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивоз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-17",
+   "first_seen": "2026-11-24",
    "has_phone": false
   },
   {
@@ -17200,12 +19616,40 @@
    "has_phone": true
   }
  ],
- "rejected_today": [],
+ "rejected_today": [
+  {
+   "id": "zernoua:26006",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-26006/",
+   "title": "Есть покупаи пшеницы фуражную и классную. За наличный и безналичный расчет от 100т",
+   "signs": [
+    "доставка назначение"
+   ]
+  },
+  {
+   "id": "zernoua:32268",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-32268/",
+   "title": "Куплю сою ГМО",
+   "signs": [
+    "на елеваторі"
+   ]
+  },
+  {
+   "id": "zerno-agrotender:6ab3ab1713897684a0a96d6b",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Соняшник",
+   "signs": [
+    "приймання"
+   ]
+  }
+ ],
  "phones_enc": {
   "v": 1,
   "iter": 250000,
-  "salt": "NPXzcl4DpV5NJPlfKgY68w==",
-  "iv": "j72bYJfTNHLHwyQz",
-  "ct": "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"
+  "salt": "iqSHyakL9MccSbatJ/WLPw==",
+  "iv": "DW/oF0Pmm2B+D1KQ",
+  "ct": "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"
  }
 }
