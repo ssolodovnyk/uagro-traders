@@ -14,6 +14,10 @@ on:
       timezone: "Europe/Kyiv"
     - cron: "7 10 * * *"
       timezone: "Europe/Kyiv"
+    # Додаткова страховка без часового поясу (за UTC): 6:11, 6:41 і 7:21 UTC = 8:11, 8:41 і 9:21 взимку за Києвом.
+    - cron: "11 6 * * *"
+    - cron: "41 6 * * *"
+    - cron: "21 7 * * *"
   workflow_dispatch: {}   # кнопка «Run workflow» для ручного запуску
 
 permissions:
