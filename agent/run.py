@@ -5,6 +5,7 @@
          python agent/run.py --no-send  — без повідомлення в Telegram (для перевірки)
 """
 import hashlib
+import hmac
 import json
 import os
 import re
@@ -126,8 +127,22 @@ def main():
         S.HAS_PHONE.clear()
         S.HAS_PHONE.update(phones)
 
+    # «Вже показані номери»: щоб той самий трейдер не з'являвся вдруге з новим оголошенням.
+    # Номери зберігаються не відкрито, а як ключ HMAC з паролем PHONES_PASSWORD (без пароля їх не відновити).
+    def phone_key(p):
+        return hmac.new(PHONES_PASSWORD.encode(), p.encode(), hashlib.sha256).hexdigest()[:20]
+    if PHONES_PASSWORD and "phones" not in seen:
+        first = {a["id"]: a.get("first_seen", today.isoformat()) for a in old_ads}
+        seen["phones"] = {}
+        for aid, ps in phones.items():
+            for p in ps:
+                k = phone_key(p)
+                d = first.get(aid, today.isoformat())
+                if k not in seen["phones"] or d < seen["phones"][k]:
+                    seen["phones"][k] = d
+
     statuses, new_cards, rejected = [], [], []
-    counts = {"farm": 0, "unclear": 0, "delivery": 0, "duplicate": 0}
+    counts = {"farm": 0, "unclear": 0, "delivery": 0, "duplicate": 0, "dup_phone": 0}
 
     for key, name, home, fn in SOURCES:
         st = {"key": key, "name": name, "url": home, "ok": True, "error": "", "found": 0, "new": 0}
@@ -168,6 +183,13 @@ def main():
                     continue
                 if fp:
                     seen["fps"][fp] = today.isoformat()
+                if PHONES_PASSWORD and ad.get("phones"):
+                    keys = [phone_key(p) for p in ad["phones"]]
+                    if any(k in seen["phones"] for k in keys):
+                        counts["dup_phone"] += 1  # цей номер уже був — трейдер відомий, не показуємо вдруге
+                        continue
+                    for k in keys:
+                        seen["phones"][k] = today.isoformat()
                 counts[verdict] += 1
                 st["new"] += 1
                 new_cards.append(card)
@@ -189,12 +211,15 @@ def main():
     old = (today - timedelta(days=180)).isoformat()
     seen["ids"] = {k: v for k, v in seen["ids"].items() if v >= old}
     seen["fps"] = {k: v for k, v in seen["fps"].items() if v >= old}
+    if "phones" in seen:
+        seen["phones"] = {k: v for k, v in seen["phones"].items() if v >= old}
 
     failed = [s["name"] for s in statuses if not s["ok"]]
     run = {
         "generated_at": now.isoformat(timespec="minutes"), "run_date": today.isoformat(),
         "new_total": len(new_cards), "new_farm": counts["farm"], "new_unclear": counts["unclear"],
         "rejected_delivery": counts["delivery"], "duplicates": counts["duplicate"], "failed": failed,
+        "dup_phones": counts["dup_phone"],
     }
     out = {"run": run, "sources": statuses, "ads": ads, "rejected_today": rejected}
     if PHONES_PASSWORD:
@@ -209,7 +234,8 @@ def main():
 
     msg = (f"🌾 Зернотрейдери «з місця» — {today.strftime('%d.%m.%Y')}\n"
            f"Нових: {len(new_cards)} (з місця: {counts['farm']}, неясні: {counts['unclear']})\n"
-           f"Відсіяно CPT/доставка: {counts['delivery']}, дублів: {counts['duplicate']}")
+           f"Відсіяно CPT/доставка: {counts['delivery']}, дублів: {counts['duplicate']}, "
+           f"номерів, що вже були: {counts['dup_phone']}")
     if failed:
         msg += "\n⚠️ Не відкрився: " + ", ".join(failed)
     partial = [s["name"] for s in statuses if s["ok"] and s.get("partial")]
