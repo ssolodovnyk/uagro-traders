@@ -416,6 +416,39 @@ def agrorynok(cutoff, today, is_seen):
     return ads
 
 
+# ---------------------------------------------------------------- agrorynok.com.ua — торговий майданчик «Купівля (bid)»
+# Таблиця заявок покупців зернових і олійних: товар, обсяг, ціна, дата, покупець з областю, умови, телефон.
+def agrorynok_bid(cutoff, today, is_seen):
+    html = fetch(f"{AR}/zerno-i-maslichnie/bid")
+    soup = BeautifulSoup(html, "html.parser")
+    rows = soup.select("table.trade_offers tr.to_goods")
+    if not rows:
+        raise SiteError("не знайдено заявок на майданчику (сайт змінив вигляд?)")
+    ads = []
+    for tr in rows:
+        lot = tr.select_one("td.to_lot")
+        tds = tr.find_all("td")
+        if not lot or len(tds) < 5:
+            continue
+        pid = _txt(lot)
+        goods, volume, price, dtext = _txt(tds[1]), _txt(tds[2]), _txt(tds[3]), _txt(tds[4])
+        d = _date_ru_uk(dtext, today)
+        if not d or d < cutoff:
+            continue
+        seller = tr.find_next_sibling("tr")
+        cond = seller.find_next_sibling("tr") if seller else None
+        stext = _txt(seller) if seller else ""
+        m = re.search(r"Покупець\s*:\s*(.*?)\s*Умови\s*:\s*(.*)$", stext)
+        buyer, terms = (m.group(1), m.group(2)) if m else (stext, "")
+        ads.append({
+            "source": "agrorynok-bid", "id": f"agrorynok-bid:{pid}", "url": f"{AR}/zerno-i-maslichnie/{pid}.html",
+            "title": f"Купую: {goods}", "rubric": goods, "price_text": "" if price.lower().startswith("дог") else price,
+            "volume_text": volume, "author": buyer, "company_hint": buyer, "region_text": buyer,
+            "date": d, "text": f"{goods}. {terms}", "phones": extract_phones(_txt(cond) if cond else ""),
+        })
+    return ads
+
+
 # ---------------------------------------------------------------- agro-exchange.com.ua (life AGROS)
 # Сайт малює оголошення через JavaScript, тому відкриваємо його звичайним браузером
 # (Playwright, без входу в акаунт) і читаємо картки так, як їх бачить відвідувач.
@@ -537,6 +570,7 @@ SOURCES = [
     ("agro-ukraine", "Agro-Ukraine", "https://agro-ukraine.com/", agro_ukraine),
     ("clunya", "Clunya", "https://clunya.com/orders/page/1", clunya),
     ("agrorynok", "Агроринок", "https://agrorynok.com.ua/bbs/", agrorynok),
+    ("agrorynok-bid", "Агроринок — майданчик", "https://agrorynok.com.ua/zerno-i-maslichnie/bid", agrorynok_bid),
     ("agro-exchange", "life AGROS", "https://agro-exchange.com.ua/?board=buy", agro_exchange),
     ("zernoua", "ZernoUA", "https://zernoua.com/ua/board/", zernoua),
     ("zerno-agrotender", "Agrotender Закупівля", "https://zerno.agrotender.com.ua/purchases", zerno_agrotender),
