@@ -4,6 +4,7 @@ import re
 import time
 import warnings
 from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
@@ -168,10 +169,27 @@ AU_RUBRICS = {"5": "Зернові", "18": "Зернобобові", "19": "Ол
 
 
 def agro_ukraine(cutoff, today, is_seen):
+    return _au_engine("agro-ukraine", f"{AU}/ua/trade/", AU_RUBRICS, cutoff, today, is_seen)
+
+
+# ---------------------------------------------------------------- zernoua.com (той самий «рушій», що й Agro-Ukraine)
+ZU = "https://zernoua.com"
+ZU_RUBRICS = {"14": "Пшениця", "5": "Кукурудза", "25": "Ячмінь", "11": "Соняшник", "21": "Соя", "17": "Ріпак",
+              "4": "Гречка", "12": "Просо", "19": "Жито", "9": "Овес", "2": "Горох, нут", "23": "Квасоля",
+              "95": "Гірчиця", "97": "Льон", "96": "Коріандр", "20": "Сорго", "22": "Тритикале", "24": "Сочевиця",
+              "1": "Вика", "7": "Люпин", "94": "Зернові відходи"}
+
+
+def zernoua(cutoff, today, is_seen):
+    return _au_engine("zernoua", f"{ZU}/ua/board/", ZU_RUBRICS, cutoff, today, is_seen)
+
+
+def _au_engine(source, base, rubrics, cutoff, today, is_seen):
+    """Дошки на «рушії» Agro-Ukraine: пошук «Куплю» (types_id=1) за рубриками, найновіші зверху."""
     ads, seen_ids = [], set()
-    for rid in AU_RUBRICS:
+    for rid in rubrics:
         for p in range(1, MAX_PAGES + 1):
-            url = f"{AU}/ua/trade/?adv_search=1&r_id={rid}&r_id_all_sub=1&types_id=1&sort_mode=1" + (f"&page={p}" if p > 1 else "")
+            url = f"{base}?adv_search=1&r_id={rid}&r_id_all_sub=1&types_id=1&sort_mode=1" + (f"&page={p}" if p > 1 else "")
             html = list_page(url, ads)
             if html is None:
                 break
@@ -196,8 +214,11 @@ def agro_ukraine(cutoff, today, is_seen):
                 if not d or d < cutoff:
                     continue
                 reg = descr.select_one("span") if descr else None
+                href = a.get("href") or ""
+                if href.startswith("/"):
+                    href = base.split("/ua/")[0] + href
                 ads.append({
-                    "source": "agro-ukraine", "id": f"agro-ukraine:{pid}", "url": a.get("href"),
+                    "source": source, "id": f"{source}:{pid}", "url": href,
                     "title": _txt(a), "rubric": _txt(it.select_one("a.rubric1")),
                     "price_text": _txt(it.select_one("span.i_price")), "volume_text": "",
                     "author": "", "region_text": _txt(reg), "date": d,
@@ -222,6 +243,58 @@ def agro_ukraine(cutoff, today, is_seen):
         # телефон на Agro-Ukraine захищений кнопкою «показати» — його не обходимо;
         # беремо номер лише якщо автор сам написав його в тексті
         ad["phones"] = extract_phones(ad["text"])
+    return ads
+
+
+# ---------------------------------------------------------------- zerno.agrotender.com.ua/purchases
+# Заявки трейдерів на закупівлю. Без входу сайт показує 10 найсвіжіших — їх і беремо
+# (вони вбудовані в сторінку як JSON). Телефон схований кнопкою «Показати номер» — його не беремо,
+# лише якщо номер написано в коментарі.
+ZA = "https://zerno.agrotender.com.ua"
+KYIV_TZ = ZoneInfo("Europe/Kyiv")
+_ZA_NOT_GRAIN = ("олія", "шрот", "макух", "жмих", "лузг")
+
+
+def zerno_agrotender(cutoff, today, is_seen):
+    html = fetch(f"{ZA}/purchases")
+    m = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', html, re.S)
+    if not m:
+        raise SiteError("не вдалося прочитати заявки (сайт змінив вигляд?)")
+    try:
+        queries = json.loads(m.group(1))["props"]["pageProps"]["dehydratedState"]["queries"]
+        posts = [p for q in queries for page in (q["state"]["data"] or {}).get("pages", []) for p in page.get("posts", [])]
+    except (KeyError, TypeError, ValueError, AttributeError):
+        raise SiteError("не вдалося прочитати заявки (сайт змінив вигляд?)")
+    ads = []
+    for o in posts:
+        culture = o.get("culture") or ""
+        if any(w in culture.lower() for w in _ZA_NOT_GRAIN):
+            continue
+        try:
+            d = datetime.fromisoformat((o.get("date") or "").replace("Z", "+00:00")).astimezone(KYIV_TZ).date()
+        except ValueError:
+            continue
+        if d < cutoff:
+            continue
+        regions = o.get("region_list") or []
+        price_text = ""
+        for r in regions:
+            pr = r.get("price") or {}
+            for k, cur in (("uah", "грн"), ("usd", "$"), ("eur", "€")):
+                if pr.get(k):
+                    price_text = f"{pr[k]} {cur}"
+                    break
+            if price_text:
+                break
+        comment = o.get("comment") or ""
+        user = o.get("user") or {}
+        ads.append({
+            "source": "zerno-agrotender", "id": f"zerno-agrotender:{o.get('_id')}", "url": f"{ZA}/purchases",
+            "title": f"Купую: {culture}", "rubric": culture, "price_text": price_text, "volume_text": "",
+            "author": user.get("name") or "", "company_hint": user.get("name") or "",
+            "region_text": ", ".join(r.get("name", "") for r in regions[:3]) + (" обл." if regions else ""),
+            "date": d, "text": comment, "phones": extract_phones(comment),
+        })
     return ads
 
 
@@ -465,4 +538,6 @@ SOURCES = [
     ("clunya", "Clunya", "https://clunya.com/orders/page/1", clunya),
     ("agrorynok", "Агроринок", "https://agrorynok.com.ua/bbs/", agrorynok),
     ("agro-exchange", "life AGROS", "https://agro-exchange.com.ua/?board=buy", agro_exchange),
+    ("zernoua", "ZernoUA", "https://zernoua.com/ua/board/", zernoua),
+    ("zerno-agrotender", "Agrotender Закупівля", "https://zerno.agrotender.com.ua/purchases", zerno_agrotender),
 ]
