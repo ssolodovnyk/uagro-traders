@@ -66,7 +66,9 @@ input[type=number]{padding:8px;border:1px solid var(--line);border-radius:8px;ba
 .tel{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .tel a{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:9px 12px;border-radius:9px}
 .telbtn{margin-top:8px;width:100%;font-weight:600}
-.msg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.msg{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px}
+.mbtn.sm{border-color:#c47a00}
+@media (max-width:420px){.msg{grid-template-columns:repeat(3,1fr)}}
 .mbtn{display:block;text-align:center;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:9px 4px;font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;font-family:inherit}
 .mbtn.tg{border-color:#2a9fd8}.mbtn.wa{border-color:#25a95a}.mbtn.vb{border-color:#7b519d}
 .mbtn.ln{grid-column:1/-1;border-color:var(--accent);color:var(--accent)}
@@ -204,6 +206,7 @@ function msgButtons(a, phone){
       <a class="mbtn tg" href="https://t.me/+${d}" target="_blank" rel="noopener" data-id="${esc(a.id)}" data-app="Telegram">✈️ Telegram</a>
       <a class="mbtn wa" href="${esc(wa)}" target="_blank" rel="noopener" data-id="${esc(a.id)}" data-app="WhatsApp">🟢 WhatsApp</a>
       <a class="mbtn vb" href="viber://chat?number=%2B${d}" data-id="${esc(a.id)}" data-app="Viber">🟣 Viber</a>
+      <a class="mbtn sm" href="sms:+${d}?&body=${encodeURIComponent(messageFor(a))}" data-id="${esc(a.id)}" data-app="SMS">📱 SMS</a>
       <button class="mbtn cp" data-id="${esc(a.id)}" data-app="copy">📋 Текст</button>
       <button class="mbtn ln" data-id="${esc(a.id)}" data-app="link">🔗 Посилання — друге повідомлення</button>
     </div>`;
@@ -346,6 +349,7 @@ document.getElementById("list").addEventListener("click", e => {
     copyText(messageFor(a)).then(ok => toast(app === "copy"
       ? (ok ? "Текст скопійовано" : "Не вдалося скопіювати")
       : app === "WhatsApp" ? "Текст уже вставлено в WhatsApp — натисніть «Надіслати»"
+      : app === "SMS" ? "Текст уже вставлено в SMS — натисніть «Надіслати»"
       : (ok ? `Текст скопійовано — у ${app} вставте його в чат і надішліть` : `Відкриваю ${app}`)));
     if (app !== "copy" && !ST[a.id]){ ST[a.id] = "sent"; STD[a.id] = new Date().toISOString(); saveSt(); saveExtra(); setTimeout(render, 400); }
     return;
