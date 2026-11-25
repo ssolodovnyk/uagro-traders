@@ -449,6 +449,52 @@ def agrorynok_bid(cutoff, today, is_seen):
     return ads
 
 
+# ---------------------------------------------------------------- graintrade.com.ua — зернова біржа (/birzha)
+# Загальна таблиця пропозицій (куплю й продам разом, нові зверху, ~14 на сторінку). Беремо лише «куплю».
+# Контакти й телефони сайт показує тільки зареєстрованим — не реєструємось, тому телефонів звідси немає.
+GT = "https://graintrade.com.ua"
+
+
+def graintrade(cutoff, today, is_seen):
+    ads, seen_rows = [], 0
+    for page in range(1, 41):
+        html = fetch(f"{GT}/birzha" + (f"?Ad_page={page}" if page > 1 else ""))
+        rows = BeautifulSoup(html, "html.parser").select("#btpicture-grid table tbody tr")
+        rows = [tr for tr in rows if tr.select_one("a.birzha_link")]
+        if not rows:
+            if page == 1:
+                raise SiteError("не знайдено таблиці біржі (сайт змінив вигляд?)")
+            break
+        seen_rows += len(rows)
+        oldest = None
+        for tr in rows:
+            tds = tr.find_all("td", recursive=False)
+            if len(tds) < 8:
+                continue
+            link = tr.select_one("a.birzha_link")["href"]
+            m = re.search(r"-id(\d+)$", link)
+            dm = re.search(r"(\d\d)\.(\d\d)\.(\d{4})", _txt(tds[0]))
+            if not m or not dm:
+                continue
+            d = date(int(dm.group(3)), int(dm.group(2)), int(dm.group(1)))
+            oldest = d if oldest is None or d < oldest else oldest
+            if d < cutoff or _txt(tds[2]).lower() != "куплю":
+                continue
+            company, crop, volume, price, terms, basis = (_txt(tds[i]) for i in (1, 3, 4, 5, 6, 7))
+            if any(w in crop.lower() for w in _ZA_NOT_GRAIN):
+                continue
+            ads.append({
+                "source": "graintrade", "id": f"graintrade:{m.group(1)}", "url": GT + link,
+                "title": f"Купую: {crop}", "rubric": crop, "price_text": price,
+                "volume_text": f"{volume} т" if volume else "", "author": company, "company_hint": company,
+                "region_text": basis, "date": d, "text": f"{crop}. Умова поставки: {terms}. Базис: {basis}",
+                "phones": [],
+            })
+        if oldest is not None and oldest < cutoff:
+            break
+    return ads
+
+
 # ---------------------------------------------------------------- agro-exchange.com.ua (life AGROS)
 # Сайт малює оголошення через JavaScript, тому відкриваємо його звичайним браузером
 # (Playwright, без входу в акаунт) і читаємо картки так, як їх бачить відвідувач.
@@ -571,6 +617,7 @@ SOURCES = [
     ("clunya", "Clunya", "https://clunya.com/orders/page/1", clunya),
     ("agrorynok", "Агроринок", "https://agrorynok.com.ua/bbs/", agrorynok),
     ("agrorynok-bid", "Агроринок — майданчик", "https://agrorynok.com.ua/zerno-i-maslichnie/bid", agrorynok_bid),
+    ("graintrade", "GrainTrade", "https://graintrade.com.ua/birzha", graintrade),
     ("agro-exchange", "life AGROS", "https://agro-exchange.com.ua/?board=buy", agro_exchange),
     ("zernoua", "ZernoUA", "https://zernoua.com/ua/board/", zernoua),
     ("zerno-agrotender", "Agrotender Закупівля", "https://zerno.agrotender.com.ua/purchases", zerno_agrotender),
