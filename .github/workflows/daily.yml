@@ -13,7 +13,14 @@ on:
     - cron: "11 7 * * *"
     - cron: "41 7 * * *"
     - cron: "21 8 * * *"
-  workflow_dispatch: {}   # кнопка «Run workflow» для ручного запуску
+  # Ручний запуск (кнопка «Run workflow») і «будильник» cron-job.org о 8:00 за Києвом.
+  # Будильник надсилає force=false: тоді запуск пропускається, якщо сьогодні вже був.
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Запустити, навіть якщо сьогодні вже був запуск"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -34,7 +41,7 @@ jobs:
         run: |
           H=$(TZ=Europe/Kyiv date +%H); TODAY=$(TZ=Europe/Kyiv date +%F)
           LAST=$(python3 -c "import json;print(json.load(open('docs/data.json')).get('run',{}).get('run_date',''))" 2>/dev/null || echo "")
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then GO=1
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force }}" != "false" ]; then GO=1
           elif [ "$H" -ge 8 ] && [ "$LAST" != "$TODAY" ]; then GO=1
           else GO=0; fi
           echo "Київ: $H год, останній запуск: $LAST, запускаємо: $GO"
