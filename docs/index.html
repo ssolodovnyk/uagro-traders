@@ -159,9 +159,10 @@ function computeDups(){
   }
 }
 const DKEY = "uagro-status-dates-v1", TKEY = "uagro-template-v1";
-const DEFAULT_TPL = `Добрий день. Бачив вашу об'яву в інтернеті. Ви купуєте {культура} з господарства?`;
-// попередній стандартний текст — якщо на пристрої збережено саме його, замінюємо на новий
+const DEFAULT_TPL = `Добрий день. Бачив вашу сьогоднішню об'яву в інтернеті. Ви купуєте {культура} з господарства?`;
+// попередні стандартні тексти — якщо на пристрої збережено саме їх, замінюємо на новий
 const OLD_TPL_START = "Добрий день! Я керівник платформи UAGRO.";
+const OLD_TPL_2 = `Добрий день. Бачив вашу об'яву в інтернеті. Ви купуєте {культура} з господарства?`;
 const TKEY2 = "uagro-template2-v1";
 const DEFAULT_TPL2 = `Подивіться платформу UAGRO — там фермери щодня викладають заявки на продаж урожаю з господарства по всій Україні: https://uagro.trade/
 Реєстрація і користування зараз безкоштовні.`;
@@ -170,7 +171,7 @@ function loadExtra(){
   try{ STD = JSON.parse(localStorage.getItem(DKEY)||"{}") }catch(e){ STD = {} }
   try{ TPL = localStorage.getItem(TKEY) || DEFAULT_TPL }catch(e){ TPL = DEFAULT_TPL }
   try{ TPL2 = localStorage.getItem(TKEY2) || DEFAULT_TPL2 }catch(e){ TPL2 = DEFAULT_TPL2 }
-  if (TPL.startsWith(OLD_TPL_START)) TPL = DEFAULT_TPL;
+  if (TPL.startsWith(OLD_TPL_START) || TPL === OLD_TPL_2) TPL = DEFAULT_TPL;
 }
 // культура у формі «що купуєте?»: кукурудза → кукурудзу, соя → сою
 const ACC = {"пшениця":"пшеницю","кукурудза":"кукурудзу","соя":"сою","гречка":"гречку","вика":"вику","квасоля":"квасолю",
@@ -303,7 +304,8 @@ function render(){
       </div>
       ${DUP_COUNT[a.id] ? `<div class="sign">Цей номер є ще в ${DUP_COUNT[a.id]} оголошенн${DUP_COUNT[a.id] === 1 ? "і" : "ях"} — їх сховано як повтори</div>` : ""}
       ${a.has_phone ? (PHONES ? `<div class="tel">${phones.map(p => `<a href="tel:${esc(p)}">📞 ${esc(fmtTel(p))}</a>`).join("")}</div>${phones.length ? msgButtons(a, phones[0]) : ""}`
-                              : `<button class="sbtn telbtn" data-tel="1">📞 Показати телефон і написати</button>`) : ""}
+                              : `<button class="sbtn telbtn" data-tel="1">📞 Показати телефон і написати</button>`)
+                  : `<div class="msg"><button class="mbtn cp" data-id="${esc(a.id)}" data-app="copy-nophone">📋 Текст</button></div>`}
     </article>`;
   }).join("") + (rest > 0 ? `<button class="tab more" id="more">Показати ще (${rest})</button>` : "");
 }
@@ -344,6 +346,10 @@ document.getElementById("list").addEventListener("click", e => {
     const app = m.dataset.app;
     if (app === "link"){
       copyText(messageFor(a, TPL2)).then(ok => toast(ok ? "Повідомлення з посиланням скопійовано — вставте в чат" : "Не вдалося скопіювати"));
+      return;
+    }
+    if (app === "copy-nophone"){
+      copyText(messageFor(a)).then(ok => toast(ok ? "Текст скопійовано — відкрийте оригінал і напишіть автору на сайті" : "Не вдалося скопіювати"));
       return;
     }
     copyText(messageFor(a)).then(ok => toast(app === "copy"
