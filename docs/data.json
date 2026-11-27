@@ -1,17 +1,17 @@
 {
  "run": {
-  "generated_at": "2026-11-26T08:01+02:00",
-  "run_date": "2026-11-26",
-  "new_total": 44,
-  "new_farm": 29,
-  "new_unclear": 15,
-  "rejected_delivery": 4,
-  "duplicates": 1,
+  "generated_at": "2026-11-27T08:01+02:00",
+  "run_date": "2026-11-27",
+  "new_total": 31,
+  "new_farm": 13,
+  "new_unclear": 18,
+  "rejected_delivery": 9,
+  "duplicates": 8,
   "failed": [
    "GrainTrade"
   ],
-  "dup_phones": 38,
-  "with_phone": 276
+  "dup_phones": 101,
+  "with_phone": 279
  },
  "sources": [
   {
@@ -20,8 +20,8 @@
    "url": "https://agrotender.com.ua/board",
    "ok": true,
    "error": "",
-   "found": 156,
-   "new": 1
+   "found": 176,
+   "new": 2
   },
   {
    "key": "agro-ukraine",
@@ -29,9 +29,9 @@
    "url": "https://agro-ukraine.com/",
    "ok": true,
    "error": "",
-   "found": 456,
-   "new": 38,
-   "retry_later": 98
+   "found": 470,
+   "new": 17,
+   "retry_later": 12
   },
   {
    "key": "clunya",
@@ -39,7 +39,7 @@
    "url": "https://clunya.com/orders/page/1",
    "ok": true,
    "error": "",
-   "found": 46,
+   "found": 41,
    "new": 0
   },
   {
@@ -48,7 +48,7 @@
    "url": "https://agrorynok.com.ua/bbs/",
    "ok": true,
    "error": "",
-   "found": 24,
+   "found": 17,
    "new": 0
   },
   {
@@ -84,8 +84,8 @@
    "url": "https://zernoua.com/ua/board/",
    "ok": true,
    "error": "",
-   "found": 132,
-   "new": 0
+   "found": 92,
+   "new": 6
   },
   {
    "key": "zerno-agrotender",
@@ -93,11 +93,717 @@
    "url": "https://zerno.agrotender.com.ua/purchases",
    "ok": true,
    "error": "",
-   "found": 9,
-   "new": 5
+   "found": 10,
+   "new": 6
   }
  ],
  "ads": [
+  {
+   "id": "zerno-agrotender:6af5af3ca734370bd5754c9f",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Соняшник",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": 13000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": "Ферма Савин Агро",
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-27",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:6af5ae78a734370bd5754c04",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Соя без ГМО",
+   "crops": [
+    "Соя"
+   ],
+   "price": 16000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Київська обл.",
+   "district": null,
+   "company": "Ферма Савин Агро",
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-27",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:687bfbb7e93bac810eea5499",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Соя без ГМО",
+   "crops": [
+    "Соя"
+   ],
+   "price": 18500,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Закарпатська обл.",
+   "district": null,
+   "company": "РО АГРО ТРЕЙД",
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-27",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:6b040f91a734370bd57de337",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Соняшник",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": 350,
+   "currency": "$",
+   "volume_t": 500,
+   "region": "Одеська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-27",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:6b085911a734370bd5819062",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Соняшник",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": 16500,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Одеська обл.",
+   "district": null,
+   "company": "Авенор Трейд",
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-27",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zerno-agrotender:6b080469a734370bd5810568",
+   "source": "zerno-agrotender",
+   "url": "https://zerno.agrotender.com.ua/purchases",
+   "title": "Купую: Соя",
+   "crops": [
+    "Соя"
+   ],
+   "price": 13000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Черкаська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-27",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agrotender:363530",
+   "source": "agrotender",
+   "url": "https://agrotender.com.ua/board/post-363530",
+   "title": "Закуповуємо ЯЧмінь з місця від 100 тон НДС",
+   "crops": [
+    "Пшениця",
+    "Кукурудза",
+    "Ячмінь"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 60000,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": "Агротрейдинг Украина",
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "свій транспорт"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": true
+  },
+  {
+   "id": "agrotender:312607",
+   "source": "agrotender",
+   "url": "https://agrotender.com.ua/board/post-312607",
+   "title": "Куплю просо",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:1394595",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1394595/zakupovuyemo-kukuruzu-samoviviz-vid-100-ton/",
+   "title": "Закуповуємо Кукурузу Самовивіз від 100 тон",
+   "crops": [
+    "Пшениця",
+    "Кукурудза",
+    "Ячмінь",
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 100,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "самовивіз",
+    "свій транспорт"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": true
+  },
+  {
+   "id": "agro-ukraine:705911",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-705911/kuplyu-oves-konditsiyu-i-nekonditsiyu/",
+   "title": "Купляєм овес",
+   "crops": [
+    "Овес"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Житомирська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "своїм транспортом",
+    "забираєм"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:956511",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-956511/kuplyu-rozh/",
+   "title": "Куплю жито з любим числом падіння",
+   "crops": [
+    "Жито"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 50,
+   "region": "Волинська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366774",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366774/zakupovuyemo-proso-svoyi-zernovozi/",
+   "title": "Закуповуємо просо. Свої зерновози",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Івано-Франківська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "заберемо"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1390419",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1390419/kuplyu-proso-zhovte/",
+   "title": "Куплю просо жовте",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Рівненська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "власним транспортом"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366778",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366778/zakupovuyemo-vrozhaj-prosa/",
+   "title": "Закуповуємо врожай проса",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 20,
+   "region": "Тернопільська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1366773",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1366773/kuplyu-proso-samoviviz-iz-gospodarstva/",
+   "title": "Куплю просо. Самовивіз із господарства",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Львівська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз",
+    "свій транспорт"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1324301",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1324301/kuplyu-proso/",
+   "title": "Куплю Просо",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Чернігівська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "заберемо",
+    "з господарства"
+   ],
+   "also_delivery": true,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1397111",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1397111/kuplyu-soyu/",
+   "title": "Куплю сою",
+   "crops": [
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Тернопільська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1341996",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1341996/kupuyemo-gorokh/",
+   "title": "Купуємо горох жовтий",
+   "crops": [
+    "Горох"
+   ],
+   "price": 6000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1266019",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1266019/kuplyu-mavku/",
+   "title": "Куплю мавку",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1225559",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1225559/kuplyu-fosol-mavka/",
+   "title": "Куплю фосоль Мавка",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1300569",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1300569/kuplyu-chornu-mavku/",
+   "title": "Куплю чорну мавку",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 1,
+   "region": "Хмельницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1395635",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1395635/zakupovuyemo-ripak-samoviviz-vid-100-ton-nds/",
+   "title": "Закуповуємо ріпак самовивіз від 100 тон ндс",
+   "crops": [
+    "Пшениця",
+    "Кукурудза",
+    "Ячмінь",
+    "Ріпак"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 100,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "самовивіз",
+    "свій транспорт"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1397160",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1397160/zakupovuyemo-visokooleyinovij-vo-sonyashnik/",
+   "title": "Закуповуємо Високоолеїновий ВО СОНЯШНИК",
+   "crops": [
+    "Пшениця",
+    "Кукурудза",
+    "Ячмінь",
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Кіровоградська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "свій транспорт"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1397110",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1397110/kuplyu-sonyashnik/",
+   "title": "Куплю соняшник",
+   "crops": [
+    "Соняшник"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Тернопільська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:61549",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-61549/",
+   "title": "Куплю Пшеницю 1, 2, 3, 4 кл",
+   "crops": [
+    "Пшениця",
+    "Гречка"
+   ],
+   "price": 7000,
+   "currency": "грн",
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:62179",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-62179/",
+   "title": "Закуповуємо сою ОПТОМ по Україні",
+   "crops": [
+    "Соя"
+   ],
+   "price": 17200,
+   "currency": "грн",
+   "volume_t": null,
+   "region": null,
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:62018",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-62018/",
+   "title": "Купуємо СОЮ",
+   "crops": [
+    "Соя"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Волинська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:61550",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-61550/",
+   "title": "Дорого куплю гречку",
+   "crops": [
+    "Гречка"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "з місця",
+    "з господарств"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:61553",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-61553/",
+   "title": "Куплю просо",
+   "crops": [
+    "Просо"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": null,
+   "region": "Вінницька обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
+  {
+   "id": "zernoua:61797",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-61797/",
+   "title": "Куплю ПРОСО 2026 врожай",
+   "crops": [
+    "Просо"
+   ],
+   "price": 300,
+   "currency": "€",
+   "volume_t": null,
+   "region": "Полтавська обл.",
+   "district": null,
+   "company": null,
+   "terms": "unclear",
+   "signs": [],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-26",
+   "first_seen": "2026-11-27",
+   "has_phone": false
+  },
   {
    "id": "zerno-agrotender:687ce36be93bac810eeacba7",
    "source": "zerno-agrotender",
@@ -206,6 +912,30 @@
    "dnd": false,
    "posted": "2026-11-26",
    "first_seen": "2026-11-26",
+   "has_phone": false
+  },
+  {
+   "id": "agro-ukraine:1227331",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1227331/zakupovuyemo-kvasolyu-vid-5t-samoviviz/",
+   "title": "Закуповуємо квасолю від 5т. Самовивіз",
+   "crops": [
+    "Квасоля"
+   ],
+   "price": null,
+   "currency": null,
+   "volume_t": 5,
+   "region": "Житомирська обл.",
+   "district": null,
+   "company": null,
+   "terms": "farm",
+   "signs": [
+    "самовивіз"
+   ],
+   "also_delivery": false,
+   "dnd": false,
+   "posted": "2026-11-25",
+   "first_seen": "2026-11-27",
    "has_phone": false
   },
   {
@@ -23042,37 +23772,83 @@
  ],
  "rejected_today": [
   {
-   "id": "agro-ukraine:1280313",
+   "id": "agrotender:363659",
+   "source": "agrotender",
+   "url": "https://agrotender.com.ua/board/post-363659",
+   "title": "Куплю пшеницю! 6700 грн",
+   "signs": [
+    "з доставкою"
+   ]
+  },
+  {
+   "id": "agro-ukraine:1285036",
    "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1280313/zakupovuyemo-kvasolyu-bilikh-sortiv-vid-10-t/",
-   "title": "Закуповуємо квасолю білих сортів (від 10 т)",
+   "url": "https://agro-ukraine.com/ua/trade/m-1285036/kupuyemo-kvasolyu-dlya-konservuvannya/",
+   "title": "Купуємо квасолю для консервування",
    "signs": [
     "приймаємо"
    ]
   },
   {
-   "id": "agro-ukraine:1295244",
+   "id": "agro-ukraine:1283721",
    "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1295244/prijmayemo-na-pererobku-bilu-tovarnu-kvasolyu/",
-   "title": "Приймаємо на переробку білу товарну квасолю",
+   "url": "https://agro-ukraine.com/ua/trade/m-1283721/kupuyemo-kvasolyu-bilikh-sortiv-optom-vid-10-tonn/",
+   "title": "Купуємо квасолю білих сортів оптом від 10 тонн",
    "signs": [
     "приймаємо"
    ]
   },
   {
-   "id": "agro-ukraine:1284337",
+   "id": "agro-ukraine:1294556",
    "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1284337/kuplyu-bilu-kvasolyu-na-pererobku-vid-10-tonn/",
-   "title": "Куплю білу квасолю на переробку від 10 тонн",
+   "url": "https://agro-ukraine.com/ua/trade/m-1294556/zakupovuyemo-bilu-tovarnu-kvasolyu/",
+   "title": "Закуповуємо білу товарну квасолю",
    "signs": [
     "приймаємо"
    ]
   },
   {
-   "id": "agro-ukraine:1293717",
+   "id": "agro-ukraine:1286868",
    "source": "agro-ukraine",
-   "url": "https://agro-ukraine.com/ua/trade/m-1293717/zakupovuyemo-kvasolyu-bilu-min-partiya-10-tonn/",
-   "title": "Закуповуємо квасолю білу (мін.партія 10 тонн)",
+   "url": "https://agro-ukraine.com/ua/trade/m-1286868/kupuyemo-bilu-kvasolyu-pererobnik/",
+   "title": "Купуємо білу квасолю (переробник)",
+   "signs": [
+    "приймаємо"
+   ]
+  },
+  {
+   "id": "agro-ukraine:1281544",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1281544/kuplyu-kvasolyu-prijmayu-kvasolyu-zakupka-kvasoli/",
+   "title": "Куплю квасолю. Приймаю квасолю. Закупка квасолі",
+   "signs": [
+    "приймаємо"
+   ]
+  },
+  {
+   "id": "agro-ukraine:1393687",
+   "source": "agro-ukraine",
+   "url": "https://agro-ukraine.com/ua/trade/m-1393687/kupuyemo-sonyashnik/",
+   "title": "Купуємо соняшник",
+   "signs": [
+    "з доставкою",
+    "доставкою на"
+   ]
+  },
+  {
+   "id": "clunya:15332",
+   "source": "clunya",
+   "url": "https://clunya.com/orders/kuplu-psenicu-6700-grn",
+   "title": "Куплю пшеницю! 6700 грн",
+   "signs": [
+    "з доставкою"
+   ]
+  },
+  {
+   "id": "zernoua:62320",
+   "source": "zernoua",
+   "url": "https://zernoua.com/ua/board/i-62320/",
+   "title": "Потрібен ваш соняшник",
    "signs": [
     "приймаємо"
    ]
@@ -23081,8 +23857,8 @@
  "phones_enc": {
   "v": 1,
   "iter": 250000,
-  "salt": "0pM3dktSXc2KA5SPtQoSjw==",
-  "iv": "vPLy59C7DwFLYzC2",
-  "ct": "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"
+  "salt": "dALWAWQHXyIQwSh+vf1XtA==",
+  "iv": "MfrpHt8nhce5H/H4",
+  "ct": "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"
  }
 }
